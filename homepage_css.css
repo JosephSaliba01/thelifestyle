@@ -1,3 +1,25 @@
+table.imageSlidesTable
+{
+	border:5px solid black;
+	margin: auto;
+}
+
+
+div.MainDivTag
+{
+	border-style: dashed;
+	margin-left:50px; 
+    margin-right:50px;
+    background-color: white;
+}
+
+
+body
+{
+	background-color: #FFE4E1;
+}
+
+
 #MenuForCategories
 {
 	text-align: center;
@@ -11,15 +33,6 @@
 
 }
 
-#btDiv
-{
-	position: absolute;
-	left: 5px;
-	right: 5px;
-	bottom: 0px;
-	align-content: center;
-
-}
 
 #bulletPoints
 {
@@ -29,5 +42,5 @@
 #MainMenuHeader
 {
 	color:purple;
-
+	
 }
