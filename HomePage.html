@@ -11,6 +11,9 @@
 
 
 </head>
+
+<div class="MainDivTag">
+
 <table>
 	<tr>
 		<td>
@@ -32,6 +35,45 @@
 		<td><a href="">Schedule Builder</a></td>
 		</tr>
 </table>
+<br>
+<br>
+<table class="imageSlidesTable">
+	<tr>
+		<td>
+			<div class="w3-content w3-section" style="max-width:500px">	
+  			<img class="mySlides" src="img1.jpg" style="width:100%">
+			<img class="mySlides" src="img2.jpg" style="width:100%">
+			<img class="mySlides" src="img3.jpg" style="width:100%">
+			</div>
+		</td>
+		<td>
+			<p class="myText" value="test"></p>
+			<p class="myText" value="test2"></p>
+			<p class="myText" value="test3"></p>
+		</td>
+	</tr>
+</table>
+<br>
+<br>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var y = document.getElementsByClassName("myText");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 7000); // Change image every 2 seconds
+}
+</script>
 
 <div id="btDiv">
 <table id="bottomTable" >
@@ -71,5 +113,8 @@
 	</tr>
 
 </table>
+</div>
+
+
 </div>
 </html>
