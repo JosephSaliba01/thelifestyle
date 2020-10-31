@@ -1,0 +1,33 @@
+#MenuForCategories
+{
+	text-align: center;
+}
+
+#bottomTable
+{
+	margin-left:auto; 
+    margin-right:auto;
+	border: 3px solid black;
+
+}
+
+#btDiv
+{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	bottom: 0px;
+	align-content: center;
+
+}
+
+#bulletPoints
+{
+
+}
+
+#MainMenuHeader
+{
+	color:purple;
+
+}
