@@ -1,22 +1,70 @@
+
+body {
+margin: 0px;
+}
+
+p{
+font-size: 25px;
+
+}
+
+h1{
+color : #7c98b6;
+font-weight:normal; 
+font-size: 20px;
+}
+
 table.imageSlidesTable
 {
-	border:5px solid black;
+	font-size: 17px;
 	margin: auto;
+	background-color:#f8f8f8;
+	padding: 35px;
 }
 
 .body
 {
 	background-color: white;
-	position: relative;
+	margin: 0;
+	max-width: 1900px;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+.text {
+
+font-size: 25px;
+
+
+}
+
+.horizontalwrapper {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background-color: white;
+	padding: 10px;
+}
+
+.homepagecontainers{
+top: 0;
+bottom: 0;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-right: auto;
+margin-left: auto;
+width: fit-content;
+height: fit-content;
+background-color: white;
 
 }
 
 .MainDivTag
 {
-	
-	margin-right: 175px;
-	margin-left: 175px;
+	margin-right: 4%;
+	margin-left: 4%;
     background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .SecondMainDivTag
@@ -28,30 +76,51 @@ table.imageSlidesTable
 }
 
 .Headernav {
+	position: sticky;
+	top: 0;
 	margin-left:auto; 
 	margin-right:auto;
-	background-color: white;
-	position: sticky;	
+	background-color:white;
 	display: flex;
+	border-bottom: 1px solid rgba(107, 104, 104, 0.534);
+	
 
 
 }
 
 .tablediv {
  background-color: white;
+ padding-left: 1%;
  width: 80%;
  float: left;
+ 
+ 
 
 }
 
-.loginsignupsdiv {
-	width: 20%;
+#loginsignupsdiv {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
 	background-color: white;
-	float: right;
 	height: auto;
+	justify-content: space-between;
+	
 
+}
+
+#loginsignupsdiv div {
+	margin: 0px;
+	height: fit-content;
+	width: fit-content;
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: white;
+	
    }
-
+   
 .loginsignuptable {
 	height: 100%;
 	width: 100%;
@@ -122,4 +191,69 @@ a.loginbtn:link, a.loginbtn:visited {
 	color:black;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	
+}
+
+.homepagefooter {
+	
+	margin-top: 10%;
+	background-color:#0b4f9c;
+	padding: 5%;
+	
+}
+
+.footerdiv {
+	height: fit-content;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footerheading {
+	font-size: 38px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: white;
+}
+
+.EmailAddressDiv {
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10%;
+}
+
+.EmailAddressBtn {
+	height: 15%;
+	height: 50px;
+	
+}
+
+#EmailAddressInput {
+	width: 350px;
+	height: 50px;
+	background-color: #0b4f9c;	
+	border-bottom: 1px solid white;
+	border-width: 0;
+	border-bottom-width: 2px;
+	margin: 15px;
+}
+
+#EmailAddressInput::placeholder {
+	color: white;
+	font-style: italic;
+	font-family: monospace;
+	font-size: 16px;
+
+}
+.beginnow {
+	font-family: monospace;
+	color: white;
+	font-size: 20px;
+	margin: 15px;
+}
+
+#bulletPoints td {
+	margin-left: 15px;
+	margin-right: 15px;
 }
