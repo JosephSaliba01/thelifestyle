@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+   <meta charset="UTF-8" />
+   <title></title>
+	
+   <script   type="text/javascript" src="form.js">
+   <script type="text/javascript" src="timer.js"></script>
+   <link rel="stylesheet" type = "text/css" href="Fitness&Nutrition_css.css"/>
+
+
+</head>
+<body>
+
+	<section class="MainDivTag">
+		<section style="background-color: lightblue;">
+		<nav class="Headernav">
+			<div class="tablediv">
+				<table id="Headtable">
+					<tr>
+						<td>
+							<img src="potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
+						</td>
+						<td>
+							<h1 id="MainMenuHeader">THELIFESTYLE.CA</h1>
+						</td>
+						<td class="headertd"  style="padding-left: 50px;">
+							<a href="" class="headerlinkanchors"><p class="headerlinks">Fitsness & Nutrition</p></a>
+
+						</td>
+						<td class="headertd">
+							<a href="C:\Users\Dell\Documents\Fall 2020\Fall 2020\Soen 287\Actual CLass\educ_pro\thelifestyle-master/education.html" class="headerlinkanchors"><p class="headerlinks">Education & Professional Life</p></a>
+						</td>
+						<td class="headertd">
+							<a href="" class="headerlinkanchors"><p class="headerlinks">Finances</p></a>
+						</td>
+						<td lass="loginsignuptable">
+								<a href="" class="loginbtn">Login</a>
+	
+							</td>
+							<td>
+								<a href="" class="headerlinkanchors" style="text-decoration: underline;"><p class="headerlinks">Create an Account</p></a>
+							</td>
+					</tr>
+				</table>
+			</div>
+				
+			<div class="loginsignupsdiv">
+					<table class="loginsignuptable">
+					</table>
+			</div>
+		
+		</nav>
+		</section>
+		
+		<!-- Banner -->
+		<div class="banner-image" >
+		<br><br><br><br><br><br>
+		<br><br><br><br><br><br>
+		<br><br><br><br><br><br>
+			
+			<div class="banner-text">
+				<h1 style="font-size:50px"> Work Hard! Train Hard! </h1>
+				<p> Keep It Real </p>
+			</div>
+		</div>
+		
+		
+		
+		<section class="SecondMainDivTag">
+		<br>
+		<br>
+		
+		<p class = "text"> Work hard and train hard in order to achieve results is our moto. Whether your goal is to lose weight,
+						train for a marathon or heavy-duty strength training, we can give you tips and advice on how to achieve your goal. 
+						Throughout this section, we'll help you calculate what your daily calorie intake should be, along with some videos
+						and myths about the proper way to train. .</p>
+		<br>
+	
+		<div class="background-section2">
+			<table  class="Table2">
+				<tr>
+					<td>
+						<ul>
+						<h1> How much energy do you need?</h1>
+						<li> Use our calories calculator to determine how much you need.</li>
+						<br>
+						<li> Tailored to your bodies needs.</li>
+						<br>
+						<li> Follow our recipes after to know the best and healthies way to gain them.</li>
+						<br>
+						
+						</ul>
+					</td>
+					<td>
+					<!--Start of Calories Calculator-->
+						<div  style="width:300px;"  class ="solid"   >
+							<h1  style="font-size:15px;" > &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Calories Calculator   </h1>
+							<form>
+								<fieldset>
+									<label for="age">Age </label> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+										<input type="text" id="age" name="age"><br><br>
+									<label for="lname">Height in cm</label>
+										<input type="text" id="height" name="height"><br><br> 
+									<label for="lname">Weight in kg</label>
+										<input type="text" id="weight" name="weight"><br><br>
+										Gender ?   <input type="radio" id="male" name="gender" value="male">&nbsp;
+									<label for="male">Male</label>&nbsp;
+										<input type="radio" id="female" name="gender" value="female">
+									<label for="female">Female</label>&nbsp;
+										<br> <br>
+									<label for="activity">What is your weekly level of physical activity ? </label>
+									<select name="activity" id="activities">
+										<option value="Sedentary" id="Sedentary" >Sedentary or very minimum exercise.</option>
+										<option value="Light" id="Light" >Light exercise 1 to 3 times a week.</option>
+										<option value="Average" id="Average" >Average intensity 3 to 5 times a week.</option>
+										<option value="High" id="High" >High intensity 3 to 5 times a week.</option>
+										<option value="Intense" id="Intense" >Extremly intense and high activity the entire week.</option>
+									</select>
+										<br><br>
+										<button type="button" value="Submit"   onclick="CaloricIntake()" >Submit</button>
+										<button onClick="window.location.reload();">Start Over</button>
+										<br><br><br><br>
+								</fieldset>
+							</form>
+						</div>
+						<p id = "p3" style="font-size:20px">    </p> 
+						<p id = "p4" style="font-size:20px">    </p> 
+						<p id = "p5" style="font-size:20px">    </p> 
+						<!-- End of Calories Calculator -->
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br><br>
+		
+			<table  class="Table3">
+				<tr>
+					<td>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/HDfvWrGUkC8" 
+						frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+						allowfullscreen>
+						</iframe>
+					</td>
+				
+					<td>
+					<h1 style="font-size:50px; text-align:center;"> Let us show you how it's done! </h1>
+					<p style="margin-left:15px"> Browse through our selections of videos and reach your goals faster, safer and better. 
+												No matter what you're training for, there's something for everyone. </p> 
+					<p style="text-align:center;"> <button style="padding: 10px 25px;">Click here</button> </p>
+					</td>
+				</tr>
+			</table>
+		
+		<br><br>
+		
+		<div class="background-section2">
+			<table  class="Table2">
+				<tr>
+					<td>
+						<h1 style="font-size:50px; text-align:center;"> Feel right! Eat Right! </h1>
+						<p> Whether you need help with your weekly meal prep or you just want to try something different. 
+							We have a large selecitons of recipies for you to choose from.</p>
+						<p style="text-align:center;"> <button style="padding: 10px 25px;">Click here</button> </p>
+					</td>
+					<td style="float:right" class="food2">
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		
+	
+		
+		
+		<p>
+</p>
+	
+	
+		<p> <b> Click here to start your jouney !  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="" class="loginbtn">Survey</a>   </p>   
+		
+		
+		
+		<p> If you have any questions about anything feel free to consult our F.A.Q section where we would show you how to set up your account, 
+		navigate through the website and use the tools at your disposition.</p>
+		<br>
+		<br>
+		
+
+		<script>
+		var myIndex = 0;
+var myIndex2 = 0;
+image();
+text();
+
+function image() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var y = document.getElementsByClassName("mySlides2");
+  var z = document.getElementsByClassName("mySlides3");
+var w = document.getElementsByClassName("mySlides4");
+  var v = document.getElementsByClassName("mySlides5");
+  
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+	 y[i].style.display = "none"; 
+	 z[i].style.display = "none";  
+	 w[i].style.display = "none"; 
+	 v[i].style.display = "none";  
+	
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  
+  if (myIndex > y.length) {myIndex = 1}    
+  y[myIndex-1].style.display = "block"; 
+  
+    if (myIndex > z.length) {myIndex = 1}    
+  z[myIndex-1].style.display = "block"; 
+  
+    if (myIndex > w.length) {myIndex = 1}    
+  w[myIndex-1].style.display = "block"; 
+  
+  
+    if (myIndex > v.length) {myIndex = 1}    
+  v[myIndex-1].style.display = "block"; 
+  setTimeout(image, 3000); // Change image every 2 seconds
+}
+
+function text() {
+  var k;
+  var y = document.getElementsByClassName("myText");
+  for (k = 0; k < y.length; k++) {
+    y[k].style.display = "none";  
+  }
+  myIndex2++;
+  if (myIndex2 > y.length) {myIndex2 = 1}    
+  y[myIndex2-1].style.display = "block";  
+  setTimeout(text, 3000); // Change image every 2 seconds
+}
+		</script>
+
+		<div id="btDiv">
+		<table id="bottomTable" >
+			<tr id="bulletPoints">
+				<td><a href="">About us</a></td>
+				<td><a href="">Contact</a></td>
+				<td><a href="">FAQ</a></td>
+				<td><a href="">Account</a></td>
+			</tr>
+			<tr >
+				<td>
+					<ul>
+						<li>Why us?</li>
+						<li>Our values</li>
+						<li>Our mission</li>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<li>Twitter</li>
+						<li>Facebook</li>
+						<li>Instagram</li>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<li>test</li>
+						<li>test2</li>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<li>test</li>
+						<li>test2</li>
+					</ul>
+				</td>
+			</tr>
+
+		</table>
+		</div>
+
+	</section> 
+	</section>
+</body>
+</html>
