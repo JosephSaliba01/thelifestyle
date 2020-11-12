@@ -1,0 +1,38 @@
+div.wrapper
+{
+    border:#2395d3 3px solid;
+    padding:10px 40px 40px 40px;
+    background-color:#D3E9FF;
+    width:40%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13.5px;
+}
+
+h2
+{
+	font-style: normal;
+	font-size: 25px;
+	color:black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.wrapper p
+{
+	font-size: 18px;
+	color:black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#resultsSection
+{
+	position:absolute;
+   	top: 150;
+   	right:0;
+	border:white 3px solid;
+    padding:10px 40px 40px 40px;
+    background-color:white;
+    width:30%;
+    height: 50%;
+    margin-right: 110px;
+    font-family: Perpetua, Arial;
+}

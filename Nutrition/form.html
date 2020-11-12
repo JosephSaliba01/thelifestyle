@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+
+<script   type="text/javascript" src="form.js">
+
+</script>
+
+
+<style>
+
+
+
+</style>
+
+
+</header>
+
+
+<body>
+
+<div  style="width:200px;"  class ="solid"   >
+<h1  style="font-size:15px;" > &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Calorie Calculator   </h1>
+<form>
+<fieldset>
+
+<label for="age">Age </label> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+
+  <input type="text" id="age" name="age"><br><br>
+  
+  <label for="lname">Height in cm</label>
+  
+  <input type="text" id="height" name="height"><br><br>
+  
+   <label for="lname">Weight in kg</label>
+     <input type="text" id="weight" name="weight"><br><br>
+	 
+	 
+  Gender ?   <input type="radio" id="male" name="gender" value="male">&nbsp;
+  <label for="male">Male</label>&nbsp;
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>&nbsp;
+
+<br> <br>
+  <label for="activity">What is your weekly level of physical activity ? </label>
+  <select name="activity" id="activities">
+    <option value="Sedentary" id="Sedentary" >Sedentary or very minimum exercise.</option>
+    <option value="Light" id="Light" >Light exercise 1 to 3 times a week.</option>
+    <option value="Average" id="Average" >Average intensity 3 to 5 times a week.</option>
+    <option value="High" id="High" >High intensity 3 to 5 times a week.</option>
+	<option value="Intense" id="Intense" >Extremly intense and high activity the entire week.</option>
+  </select>
+ 
+   <br>
+   <br>
+   <button type="button" value="Submit"   onclick="CaloricIntake()" >Submit</button>
+    <br>
+   <br>
+
+    <br>
+   <br>
+   
+   </fieldset>
+   </form>
+   </div>
+   <p id = "p3">    </p> 
+    <p id = "p4">    </p> 
+	 <p id = "p5">    </p> 
+	 
+
+</body>
+
+</html>

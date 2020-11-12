@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Quiz to see what you could be interested in</title>
+    <script src="js/quiz.js"></script>
+    <link rel="stylesheet" type = "text/css" href="css/quiz.css"/>
+    <link rel="stylesheet" type = "text/css" href="css/homepage_css.css"/>
+</head>
+<body>
+    <section class="MainDivTag">
+    <section>
+    <nav class="Headernav">
+      <div class="tablediv">
+        <table id="Headtable">
+          <tr>
+            <td>
+              <img src="img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
+            </td>
+            <td>
+              <h1 id="MainMenuHeader">THELIFESTYLE.CA</h1>
+            </td>
+            <td class="headertd"  style="padding-left: 50px;">
+              <a href="C:\Users\Dell\Documents\Fall 2020\Fall 2020\Soen 287\Actual CLass\educ_pro\thelifestyle-master\Nutrition/Fitness&Nutrition.html" class="headerlinkanchors"><p class="headerlinks">Fitsness & Nutrition</p></a>
+
+            </td>
+            <td class="headertd">
+              <a href="../education.html" class="headerlinkanchors"><p class="headerlinks">Education & Professional Life</p></a>
+            </td>
+            <td class="headertd">
+              <a href="" class="headerlinkanchors"><p class="headerlinks">Finances</p></a>
+            </td>
+          </tr>
+        </table>
+      </div>
+        
+      <div class="loginsignupsdiv">
+          <table class="loginsignuptable">
+            <tr>
+              <td>
+                <a href="" class="loginbtn">Login</a>
+  
+              </td>
+              <td>
+                <a href="" class="headerlinkanchors" style="text-decoration: underline;"><p class="headerlinks">Create an Account</p></a>
+              </td>
+            
+            </tr>
+          </table>
+      </div>
+    
+    </nav>
+    </section>
+
+<h2>PLEASE FILL THIS TO KNOW WHAT PAGES WILL BE OF INTEREST FOR YOU!</h2>
+<div class="wrapper">
+<form>
+<p class="formP"><strong>Question 1</strong></p>
+<p>I need help understanding how to:</p>
+  <input type="checkbox" id="FitNutrChoice">
+  <label for="q1a"> Maintain a healthy lifestyle as a student.</label><br>
+
+  <input type="checkbox" id="FinanceChoice">
+  <label for="q1b"> Maintain a budget as a student </label><br>
+  
+  <input type="checkbox" id="EduProfChoice">
+  <label for="q1c"> Take advantage of career opportunities offered at my University </label><br>
+
+<p><strong>Question 2</strong></p>
+<p>I want to see what my school might help me in when it comes to:</p>
+  <input type="checkbox" id="FitNutrChoice">
+  <label for="q2a"> Food offered at school </label><br>
+
+  <input type="checkbox" id="FinanceChoice">
+  <label for="q2b"> Financial Aid and Scholarhips for school </label><br>
+  
+  <input type="checkbox" id="EduProfChoice">
+  <label for="q2c"> The current school calendar career fair events and lunch-and-learns </label><br>
+
+  <p><strong>Question 3</strong></p>
+<p>Outside of school I:</p>
+  <input type="checkbox" id="FitNutrChoice">
+  <label for="q3a"> Find time to work out </label><br>
+
+  <input type="checkbox" id="FinanceChoice">
+  <label for="q3b"> Have a job and maintain a budget </label><br>
+  
+  <input type="checkbox" id="EduProfChoice">
+  <label for="q3c"> Look for internship positions </label><br>
+
+    <p><strong>Question 4</strong></p>
+<p>The apps and websites you prefer to aid you in your daily life are:</p>
+  <input type="checkbox" id="FitNutrChoice">
+  <label for="q4a"> Workout, nutrition, and cooking apps </label><br>
+
+  <input type="checkbox" id="FinanceChoice">
+  <label for="q4b"> Money management apps </label><br>
+  
+  <input type="checkbox" id="EduProfChoice">
+  <label for="q4c"> Linkedin and sites like indeed </label><br>
+
+  <br>
+  <button type="button" onclick="checkboxes()"> Check results </button>
+
+</form> 
+</div>
+
+<div id="resultsSection">
+<section>
+  <h2 id="h2displayResults"></h2>
+  <p id="FinanceResult"></p>
+  <p id="FitnessAndNutritionResult"></p>
+  <p id="EduAnProResult"></p>
+  <p id="FeedWillDisplay" style="text-decoration: underline;"></p>
+</section>
+</div>
+
+
+</body>
+
+</html>
