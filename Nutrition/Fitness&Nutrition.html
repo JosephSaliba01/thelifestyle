@@ -6,54 +6,54 @@
    <meta charset="UTF-8" />
    <title></title>
 	
-   <script   type="text/javascript" src="form.js">
-   <script type="text/javascript" src="timer.js"></script>
-   <link rel="stylesheet" type = "text/css" href="Fitness&Nutrition_css.css"/>
+   <script   type="text/javascript" src="Fitness&Nutrition_js/form.js">
+   </script>
+   <link rel="stylesheet" type = "text/css" href="Fitness&Nutrition_css/Fitness&Nutrition_css.css"/>
+   <link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
 
 
 </head>
 <body>
 
-	<section class="MainDivTag">
-		<section style="background-color: lightblue;">
-		<nav class="Headernav">
-			<div class="tablediv">
-				<table id="Headtable">
-					<tr>
-						<td>
-							<img src="potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
-						</td>
-						<td>
-							<h1 id="MainMenuHeader">THELIFESTYLE.CA</h1>
-						</td>
-						<td class="headertd"  style="padding-left: 50px;">
-							<a href="" class="headerlinkanchors"><p class="headerlinks">Fitsness & Nutrition</p></a>
+	<nav class="mbHeadernav">
+		<div class="mbtablediv">
+			<table>
+				<tr>
+					<td>
+						<img src="Fitness&Nutrition_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
+					</td>
+					<td>
+						<a href="../HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
+					</td>
+					<td class="mbheadertd"  style="padding-left: 50px;">
+						<a href="Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
 
-						</td>
-						<td class="headertd">
-							<a href="C:\Users\Dell\Documents\Fall 2020\Fall 2020\Soen 287\Actual CLass\educ_pro\thelifestyle-master/education.html" class="headerlinkanchors"><p class="headerlinks">Education & Professional Life</p></a>
-						</td>
-						<td class="headertd">
-							<a href="" class="headerlinkanchors"><p class="headerlinks">Finances</p></a>
-						</td>
-						<td lass="loginsignuptable">
-								<a href="" class="loginbtn">Login</a>
-	
-							</td>
-							<td>
-								<a href="" class="headerlinkanchors" style="text-decoration: underline;"><p class="headerlinks">Create an Account</p></a>
-							</td>
-					</tr>
-				</table>
-			</div>
+					</td>
+					<td class="mbheadertd">
+						<a href="../Education/education.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
+					</td>
+					<td class="mbheadertd">
+						<a href="../finances/financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+			
+		<div id="mbloginsignupsdiv">
+				<div>
+					<a href="" class="mbloginbtn">Login</a>
+				</div>
 				
-			<div class="loginsignupsdiv">
-					<table class="loginsignuptable">
-					</table>
-			</div>
+				<div>
+					<a href="" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
+				</div>
+		</div>
+	</nav>
+	
+	<section class="MainDivTag">
 		
-		</nav>
-		</section>
+		
+		
 		
 		<!-- Banner -->
 		<div class="banner-image" >
@@ -181,7 +181,7 @@
 </p>
 	
 	
-		<p> <b> Click here to start your jouney !  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="" class="loginbtn">Survey</a>   </p>   
+		<p> <b> Click here to start your jouney !  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="../survey/quiz.html" class="loginbtn">Survey</a>   </p>   
 		
 		
 		
@@ -245,47 +245,51 @@ function text() {
 }
 		</script>
 
-		<div id="btDiv">
-		<table id="bottomTable" >
-			<tr id="bulletPoints">
-				<td><a href="">About us</a></td>
-				<td><a href="">Contact</a></td>
-				<td><a href="">FAQ</a></td>
-				<td><a href="">Account</a></td>
-			</tr>
-			<tr >
-				<td>
-					<ul>
-						<li>Why us?</li>
-						<li>Our values</li>
-						<li>Our mission</li>
-					</ul>
-				</td>
-				<td>
-					<ul>
-						<li>Twitter</li>
-						<li>Facebook</li>
-						<li>Instagram</li>
-					</ul>
-				</td>
-				<td>
-					<ul>
-						<li>test</li>
-						<li>test2</li>
-					</ul>
-				</td>
-				<td>
-					<ul>
-						<li>test</li>
-						<li>test2</li>
-					</ul>
-				</td>
-			</tr>
-
-		</table>
-		</div>
 
 	</section> 
 	</section>
 </body>
+
+<div class="homepagefooter">
+	<div class="footerdiv">
+		<h1 class="footerheading">Start with the change now</h1>
+		<div class="EmailAddressDiv">
+			<input type="text" placeholder="Email Address" id="EmailAddressInput">
+			<a href="" class="beginnow">Begin Now</a>
+		</div>
+		
+	</div>
+
+	<div class="footerlinkswrapper">
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Sections</p>
+			<p><a href="">Education</a></p>
+			<p><a href="">Finances</a></p>
+			<p><a href="">Health And Fitness</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Go To</p>
+			<p><a href="">Sign in my account</a></p>
+			<p><a href="">Schedule Builder</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">About us</p>
+			<p><a href="">Contact</a></p>
+			<p><a href="">FAQ</a></p>
+			<p><a href="">Account</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Why us?</p>
+			<p><a href="">Our Values</a></p>
+			<p><a href="">Our Mission</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Follow us on</p>
+			<p><a href="">Twitter</a></p>
+			<p><a href="">Instagram</a></p>
+			<p><a href="">Facebook</a></p>
+		</div>
+	</div>
+</div>
+
 </html>

@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+}
+
+.MainDivTag
+{
+	margin-right: 4%;
+	margin-left: 4%;
+    background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.SecondMainDivTag
+{
+	
+	margin-left:75px; 
+    margin-right:75px;
+    background-color: white;
+}
+
+.picturediv {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url("financepic.jpg");
+    height: 800px;
+    overflow-x: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color:pink;
+    display: flex;
+    align-items: center;
+   
+}
+
+.blackdiv {
+    background-color: rgba(0, 0, 0, 0.459);
+    padding: 30px;
+    width: fit-content;
+    
+    margin-top: 15%;
+    margin-bottom: 35%;
+
+}
+
+.blackdiv p {
+    font-size: 32px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.financescontainerwrappers {
+    margin-top: 5%;
+    height: fit-content;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.financescontainers {
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color:  rgba(243, 243, 243, 0.623);
+    height: 200px;
+    width: 1200px;
+}
