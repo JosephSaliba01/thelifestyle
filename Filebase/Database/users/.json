@@ -1,0 +1,10 @@
+{
+    "__created_at": 1606065858,
+    "__updated_at": 1606082943,
+    "data": {
+        "name": null,
+        "lname": null,
+        "password": null,
+        "username": null
+    }
+}
