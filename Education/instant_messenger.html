@@ -5,7 +5,7 @@
 	<title>TheLifestyle Instant Messenger</title>
 	<link rel="stylesheet" type = "text/css" href="edu_css/educationCSS.css"/>
 	<link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
-	
+	<script type="text/javaScript" src="get_set_msg.js"></script>
 </head>
 
 <body class="body" style="background-color:#3399ff;">
@@ -52,8 +52,7 @@
 			</br><span class="boxLabels">Public Chatroom: Network with other people!</span></br>
 			
 		</section>
-		<form action = "
-			<section class="msg_list">
+			<section class="msg_list" id="msg_list">
 				
 				<!--Text bubbles-->
 			</section>
@@ -61,10 +60,10 @@
 				<table class="inputTxt">
 					<tr rowspan="2">
 						<td>
-							</br><input type="text" id="txtbox" style="height:30px;" placeholder="Name"/>
+							</br><input type="text" id="name" style="height:30px;" placeholder="Name"/>
 						</td>
 						<td>
-							</br><input type="text" id="txtbox" style="height:30px;" placeholder="Email"/>
+							</br><input type="text" id="email" style="height:30px;" placeholder="Email"/>
 						</td>
 						<td>
 							</br><input type="button" id="sendBtn" style="height:30px; background-color:#7db3e3;" value="Send" />
@@ -123,4 +122,5 @@
 		</div>
 	</div>
 </div>
+
 </html>

@@ -6,6 +6,7 @@
 	<title>Education & Professional</title>
 	<link rel="stylesheet" type = "text/css" href="edu_css/educationCSS.css"/>
 	<link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
+	<script type="text/javaScript" src="eduJS.js"></script>
 </head>
 
 <body class="body">
@@ -62,26 +63,33 @@
 						<p class="IntroTxt">View suggested info from various job fields! (statistics/job opportunities/internships)</p>
 						<ul class="buttonList">
 							<li class="listItem">
-								<a href="" class="suggButton">Engineering</a>
+								<input type="button" id="Eng" class="suggButton" value="Engineering" onclick="popupSite('Eng')"/>
 							</li>
+							<li id="popUp"></li>
 							<li class="listItem">
-								<a href="" class="suggButton">Information Technology</a>
+								<input type="button" id="IT" class="suggButton" value="Information Technology" onclick="popupSite('IT')"/>
 							</li>
+							<li id="popUp2"></li>
 							<li class="listItem">
-								<a href="" class="suggButton">Health</a>
+								<input type="button" id="Hlth" class="suggButton" value="Health" onclick="popupSite('Hlth')"/>
 							</li>
+							<li id="popUp3"></li>
 							<li class="listItem">
-								<a href="" class="suggButton">Business</a>
+								<input type="button" id="Bs" class="suggButton" value="Business" onclick="popupSite('Bs')"/>
 							</li>
+							<li id="popUp4"></li>
 							<li class="listItem">
-								<a href="" class="suggButton">Marketing</a>
+								<input type="button" id="Mrkt" class="suggButton" value="Marketing" onclick="popupSite('Mrkt')"/>
 							</li>
+							<li id="popUp5"></li>
 							<li class="listItem">
-								<a href="" class="suggButton">Law</a>
+								<input type="button" id="Law" class="suggButton" value="Law" onclick="popupSite('Law')"/>
 							</li>
+							<li id="popUp6"></li>
 							<li class="listItem">
-								<a href="" class="suggButton">Retail</a>
+								<input type="button" id="Rtl" class="suggButton" value="Retail" onclick="popupSite('Rtl')"/>
 							</li>
+							<li id="popUp7"></li>
 						</ul>
 					</td>
 				</tr>

@@ -4,7 +4,7 @@
 	display: flex; 
     justify-content: center;
 }
-#txtbox, #sendBtn{
+#name, #email, #txtbox, #sendBtn{
 	border-style:none;
 	border-radius:10px;
 	
