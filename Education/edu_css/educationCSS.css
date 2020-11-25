@@ -9,7 +9,17 @@
 	border-radius:10px;
 	
 }
-
+.txt_bub{
+	background-color: #004BAA;/*Change to blue or grey depending on js event*/
+	color: white;/*or black depending on js event*/
+	border-radius: 10px;
+	padding: 10px 20px;
+	/*text-align: center;/*Align left or right depending on js event*/
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	font-family: Arial, Helvetica,sans-serif;	
+}
 .msg_general_div{
 	margin-top: 20px;
 	margin-bottom: 10px;
@@ -30,13 +40,13 @@
 }
 .msg_list{
 	border-radius: 5px;
-	grid-column-start: first;
-	grid-column-end: end;
+	grid-column-start: line2;
+	grid-column-end: five;
 	grid-row-start: row1-end;
 	grid-row-end: third-line;
 	background-color: white;
 	height:100%;
-	
+	overflow-y: scroll;
 }
 .msg_txtbox{
 	display: flex; 
