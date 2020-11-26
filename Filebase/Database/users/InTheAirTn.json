@@ -1,0 +1,13 @@
+{
+    "__created_at": 1606360737,
+    "__updated_at": 1606360737,
+    "data": {
+        "name": "Phil",
+        "lname": "Collins",
+        "password": "PassWord123!",
+        "username": "InTheAirTn",
+        "Finance": "1",
+        "FitnessNutrition": "4",
+        "EducationProfesional": "0"
+    }
+}

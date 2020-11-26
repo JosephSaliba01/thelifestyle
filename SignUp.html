@@ -19,7 +19,7 @@
 							<img src="home_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
 						</td>
 						<td>
-							<a href="HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
+							<a href="HomePage.php" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
 						</td>
 						<td class="mbheadertd"  style="padding-left: 50px;">
 							<a href="Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
@@ -46,18 +46,18 @@
 			</div>
 		</nav>
 
-<form action = "PHP/Account_Process.php" method="post" enctype="multipart/form-data" style="border:1px solid #ccc">
+<form action = "PHP/Account_Process.php" method="post" enctype="multipart/form-data" style="border:1px solid #ccc" id="SignUpForm">
   <div class="container" id="toHide">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
     <label for="fName"><b>First name</b></label>
-    <input id="fName" type="text" placeholder="Enter first name" name="fName" onkeyup="checkFirst();">
+    <input id="fName" type="text" placeholder="Enter first name"  onkeyup="checkFirst();">
     <h3 class = "fail" id="fnamefail1"></h3>
 
     <label for="lName"><b>Last Name</b></label>
-    <input id="lName" type="text" placeholder="Enter last name" name="lName"onkeyup="checkLast();">
+    <input id="lName" type="text" placeholder="Enter last name" onkeyup="checkLast();">
     <h3 class = "fail" id="fnamefail2"></h3>
 
     <label for="userID"><b>Username</b></label>
@@ -65,7 +65,7 @@
     <td><h3 class = "msg" id="chckID"></h3></td>
 
     <label for="psw"><b>Password</b></label>
-    <input id="psw" type="password" placeholder="Enter Password" name="psw"onkeyup="checkpswrd();">
+    <input id="psw" type="password" placeholder="Enter Password" onkeyup="checkpswrd();">
      <h3 class = "fail" id="pwdfail1"></h3>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
@@ -124,12 +124,16 @@
 
   <br>
   <button type="button" onclick="checkboxes()"> Complete Survey </button>
-
-  <p id="FinanceResult"></p>
-  <p id="FitnessAndNutritionResult"></p>
-  <p id="EduAnProResult"></p>
-  <p id="FeedWillDisplay" style="text-decoration: underline;"></p>
-  <input id="resultsSectionBtn" type="submit" name="accnt_pref" value="Click here to check out your new page!">
+  <div id="hidden">
+  <input id="fNameResult" type="text" name="fName">
+  <input id="lNameResult" type="text" name="lName">
+  <input id="UID" type="text" name="userID">	
+  <input id="pswResult" type="text" name="psw">	
+  <input id="FinanceResult" type="text" name="FinanceResult">
+  <input id="FitnessAndNutritionResult" type="text" name="FitnessAndNutritionResult">
+  <input id="EduAnProResult" type="text" name="EduAnProResult">
+  </div>
+  <input id="resultsSectionBtn" type="submit" name="accnt_pref" value="Click here to finalize your profile!">
 </div>
 
 </form>

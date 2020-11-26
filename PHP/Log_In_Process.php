@@ -35,7 +35,7 @@ $user = $database->get($Username);
 	
     else {
 		
-		echo "The informations do not match ";
+		echo "Account does not exists create one!";
 		
 	}
 
