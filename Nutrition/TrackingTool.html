@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+
+
+#NutritionTable{
+margin:0 auto;
+border-style: solid;
+ height: 500px;
+  width: 500px;
+  
+  background-color: #F8F8F8;
+}
+
+</style>
+
+</head>
+<html>
+<body>
+
+<div id="NutritionTable" width=>
+
+
+
+<canvas id="Calories" width="100" height="100"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+<!--
+<script>
+
+var ctx = document.getElementById('Calories').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: 'Proteins',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [100, 0, 0, 0, 0, 0, 0],
+			  fill: false
+			
+        }, {
+            label: "Carbs",
+            borderColor: 'rgb(0, 0, 255)',
+            data: [200, 0, 0, 0, 0, 0, 0],
+			
+			  fill: false
+			 
+        }, {
+            label: "Fats",
+            borderColor: 'rgb(0,128,0)',
+            data: [300, 0, 0, 0, 0, 0, 0],
+             fill: false
+			 
+			 
+        }
+		,
+		
+		 {
+            label: "Calories",
+            borderColor: 'rgb(0,128,0)',
+            data: [2500, 0, 0, 0, 0, 0, 0],
+             fill: false
+			 
+			 
+        }			
+		
+		]
+    },
+
+    // Configuration options go here
+    options: {
+	 borderDash: [1,35]
+	
+	}
+});
+
+
+</script>
+-->
+
+<script>  
+Chart.defaults.global.legend.display = false;
+
+
+ var text = document.getElementById('p3');
+	var text2 = document.getElementById('p4');
+	var text3 = document.getElementById('p5');
+	
+var ctx = document.getElementById('Calories').getContext('2d');
+var myChart = new Chart(ctx, {
+
+
+    type: 'bar',label: 'Number of calories per day.',
+	 tooltipTitleFontSize: 0,
+    data: {
+        labels: ['proteins', 'fats', 'carbs ' ,'calories '],
+        datasets: [{
+		 // label: 'Fats',
+            data: [150, 300, 200,2500],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgb(152,251,152)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)',
+					'rgb(0,128,0)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+          animation: false;	
+    }
+});
+
+
+
+
+
+                  </script>
+
+</div>
+</body>
+</html>

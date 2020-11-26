@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+   <meta charset="UTF-8" />
+   <title></title>
+	
+   <script   type="text/javascript" src="Fitness&Nutrition_js/FoodData.js">
+   
+   
+   </script>
+   
+   <style>                
+   
+#Myapp{
+width:800px; 
+margin:0 auto;
+  background-color: yellow;
+border-style: solid;
+width: 455px;
+
+  color: silver;
+}
+
+
+#color{
+
+background-color: #F8F8F8;
+}
+
+#TableApp{
+margin:0 auto;
+  background-color: #483D8B;
+border-style: solid;
+ width: 800px;
+  color: black;
+  overflow: scroll;
+  height: 300px;
+}
+
+
+
+
+
+#weight{
+width: 30%;
+}
+#NutritionTable{
+margin:0 auto;
+
+
+ height: 750px;
+  width: 1500px;
+  
+  background-color: #F8F8F8;
+}
+
+#row {
+  width: 600px;
+}
+
+td.row2 {
+  width: 400px;
+}
+#Proteins{
+
+height:15px;
+width:30px; 
+
+
+}
+
+#Title {
+ text-align:center;
+}
+#Carbs{
+
+height:15px;
+width:30px; 
+
+}
+
+#Fats{
+
+height:15px;
+width:30px; 
+
+}
+
+#SecondTable{
+ width: 800px;
+ border: 1px solid black;
+ width: 100%;
+    display: table;
+
+
+}
+
+#title{
+margin:0 auto;
+ text-align: center;
+}
+
+#info{
+
+ font-size: 25px;
+}
+
+#Title{
+ font-size: 25px;
+
+}
+#Title2{
+ font-size: 25px;
+
+}
+
+
+   </style> 
+   <link rel="stylesheet" type = "text/css" href="Fitness&Nutrition_css/Fitness&Nutrition_css.css"/>
+   <link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
+
+
+</head>
+<body>
+
+<div class="body">
+		<nav class="mbHeadernav">
+			<div class="mbtablediv">
+				<table>
+					<tr>
+						<td>
+							<img src="Fitness&Nutrition_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
+						</td>
+						<td>
+							<a href="HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
+						</td>
+						<td class="mbheadertd"  style="padding-left: 50px;">
+							<a href="Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
+
+						</td>
+						<td class="mbheadertd">
+							<a href="Education/education.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
+						</td>
+						<td class="mbheadertd">
+							<a href="finances/financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
+						</td>
+					</tr>
+				</table>
+			</div>
+				
+			<div id="mbloginsignupsdiv">
+					<div>
+						<a href="" class="mbloginbtn">Login</a>
+					</div>
+					
+					<div>
+						<a href="" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
+					</div>
+			</div>
+		</nav>
+		</div>
+		
+		
+		<table  id="TableApp">
+		<tr >
+		<td>
+		
+<canvas id="Calories" width="350" height="300"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+		
+		<script>
+		
+		Graph2(1500,2500,3000);
+		function Graph2(a , b ,c ){
+	
+	
+ var text = document.getElementById('p3');
+	var text2 = document.getElementById('p4');
+	var text3 = document.getElementById('p5');
+	
+var ctx = document.getElementById('Calories').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Maintenance', 'Bulk', 'Cut'],
+        datasets: [{
+            label: 'Number of calories per day.',
+            data: [a, b, c],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+}
+		
+		
+		</script
+		
+		</td>
+		<td  id "IDZ">
+		<h1> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Your Nutrition maximasor </h1>
+		 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+		<img src="Fitness&Nutrition_img/NutritionLogo2.png" alt="logo" style="width:400px;height:300px; float: left;">
+		
+		
+		<form>
+								<fieldset>
+								Food choice
+									<select name="activity" id="activities">
+									<option value="Almonds" id="Almonds" >Almonds</option>
+									<option value="Apple" id="Apple" >Apple</option>
+									<option value="Brocoli" id="Brocoli" >Brocoli</option>
+									<option value="Banana" id="Banana" >Banana</option>
+									<option value="Butter" id="Butter" >Butter</option>
+									<option value="Bacon" id="Bacon" >Bacon</option>
+									<option value="Brown Rice" id="Brown Rice" >Brown Rice</option>
+										<option value="Basmati Rice" id="Basmati Rice" >Basmati Rice</option>
+										<option value="Brown Bread" id="Brown Bread" >Brown Bread</option>
+										<option value="Chicken" id="Chicken" >Chicken</option>
+										<option value="Milk" id="Milk" >Milk, low fat (1%) </option>
+										<option value="Eggs" id="Eggs" >Eggs </option>
+										<option value="Salmon" id="Salmon" >Pink Salmon</option>
+										<option value="Steak" id="Steak" >Steak</option>
+										<option value="Tomatoe" id="Tomatoe" >Tomato</option>
+										<option value="White Rice" id="White Rice" >White Rice</option>
+										<option value="White Bread" id="White Bread" >White Bread</option>
+										<option value="Olive oil" id="Olive oil" >Olive oil </option>
+										<option value="Peanut Butter" id="Peanut Butter" >Peanut Butter </option>
+					
+									</select>
+									<br> <br> 
+									<label for="wheight">Weight in g</label>
+										<input type="text" id="weight" name="weight"><br><br>
+										<button type="button" value="Submit"   onclick="Calculation()" >Verify</button>
+										&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;  &nbsp;
+										<button type="button" value="Add"   onclick="" >Add</button>
+										&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+										&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+										<button type="button" value="Log"   onclick="racking()" >Log</button>
+									
+									</fieldset>
+									</form>
+		
+		</td>
+		
+		<td>
+		
+		<div id="color"> 
+		
+		<h1 id="Title" >  Daily food consumption    </h1>	
+		
+		<canvas id="Tracking" width="500" height="350"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script >
+
+var ctx = document.getElementById('Tracking').getContext('2d');
+
+
+
+function racking() {
+
+ctx.canvas.width = 500;
+ctx.canvas.height = 350;
+
+	var weight = document.getElementById("weight");
+	
+if(weight.value =="")
+	alert("Please enter a value for weight and verify the food you're entering before logging the value. ");
+	
+	else {
+
+ var text = document.getElementById('calor');
+	var text2 = document.getElementById('protein');
+	var text3 = document.getElementById('carbs');
+	var text4 = document.getElementById('fats');
+
+
+	Graph2(text2.innerHTML,text4.innerHTML,text3.innerHTML,text.innerHTML );
+	
+	}
+	
+	function Graph2(a , b , c ,d ){
+	
+
+
+var value1 = "0";
+var value2 = "0";
+var value3 = "0";
+var value4 = "0";
+
+
+
+
+
+value1+=a;
+value2+=b;
+value3+=c;
+value4+=d;
+
+var myChart = new Chart(ctx, {
+
+
+    type: 'bar',label: 'Number of calories per day.',
+	 tooltipTitleFontSize: 0,
+    data: {
+        labels: ['Proteins', 'Fats', 'Carbs ' ,'Calories '],
+        datasets: [{
+		 // label: 'Fats',
+            data: [value1, value2, value3,value4],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgb(152,251,152)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)',
+					'rgb(0,128,0)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+
+                }
+            }]
+        },
+legend: {
+    display: false
+  },
+ responsive: true,
+maintainAspectRatio: false 
+    }
+	
+}) 
+}
+}
+</script>
+		</div>
+		</td>
+			</tr>
+					</table>
+		
+		
+		<div id="NutritionTable" >
+		<br>
+		<h1 id="title"> Control your diet   </h1>
+	
+		<p> The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey. 
+		It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,
+		and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed.   </p> 
+		
+		<table class ="SecondTable">
+		<tr id="row">
+		<td>
+		
+		<div  id="Proteins"  style="display:inline">  </div>  <p  id="P" style="display:inline">  </p>
+		
+		&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+		&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+			&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+		&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+		<div  id="Carbs" style="display:inline">     </div>   
+		<p  id="C"  style="display:inline">   </p>
+		&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+		&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+			&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+		&nbsp;  &nbsp;  
+		
+		<div  id="Fats"  style="display:inline">  </div>
+		<p  id="F"  style="display:inline">   </p>
+		
+		<canvas id="Calories" width="100" height="100"></canvas>
+		
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+
+<script src='FoodData.js'></script>
+</td>
+
+<td>  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+<p style="display:inline" id="Title"> These are the informations for  </p>  <p style="display:inline" id="gram"> </p> <p style="display:inline" id="Title2"> grams.</p> 
+<ul id="info">
+<li >  Number of calories: <p id="calor" style="display:inline">   </p> </li>
+<br>
+<li> Number of proteins:   <p id="protein" style="display:inline">   </p>           </li>
+<br>
+<li>  Number of carbs:    <p id="carbs" style="display:inline">  </p>            </li>
+<br>
+<li>   Number of fats:     <p id="fats" style="display:inline">  </p>             </li>
+
+<td class = "row2">
+&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+ <img id="Food" width="500" height="300" src="Fitness&Nutrition_img/NutritionLogo1.png" style="width:100%">
+ 
+ </td>
+
+</ul>
+
+</td>
+</tr>
+
+</table>
+<ul>
+
+
+		</div>
+	
+</body>
+
+
+
+</html>
