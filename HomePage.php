@@ -38,11 +38,11 @@
 				
 			<div id="mbloginsignupsdiv">
 					<div>
-						<a href="" class="mbloginbtn">Login</a>
+						<a href="Login.html" class="mbloginbtn">Login</a>
 					</div>
 					
 					<div>
-						<a href="" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
+						<a href="SignUp.html" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
 					</div>
 			</div>
 		</nav>
@@ -187,12 +187,10 @@
 				</div>
 
 				<p>
-					Thank you for visiting our website your attention means a lot to us. Just to be certain to give you the appropriate information we advise you to start your journey in Thelifestyle.ca 
-					either by creating an account if it has not been done before or answer this short survey. 
-					By completing this form, it allows us to provide you with a series of questions that would pin point the subjects that you are looking for.
+					Thank you for visiting our website your attention means a lot to us.
 				</p>
 			
-				<p> <b> Click here to start your jouney !  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="survey/quiz.html" class="loginbtn">Survey</a>   </p>   
+				<p> <b> Click the 'Sign up' button to start your jouney!  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="SignUp.html" class="loginbtn">Sign up</a></p>   
 				
 				<p> If you have any questions about anything feel free to consult our F.A.Q section where we would show you how to set up your account, 
 				navigate through the website and use the tools at your disposition.</p>

@@ -1,0 +1,42 @@
+div.wrapper
+{
+    border:#2395d3 3px solid;
+    padding:10px 40px 40px 40px;
+    background-color:#D3E9FF;
+    width:40%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13.5px;
+    display: none;
+}
+
+h2
+{
+	font-style: normal;
+	font-size: 25px;
+	color:black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.wrapper p
+{
+	font-size: 18px;
+	color:black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#resultsSectionBtn{
+  display: none;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+#hidden
+{
+  display: none;
+}
