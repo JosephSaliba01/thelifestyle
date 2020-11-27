@@ -8,7 +8,7 @@
 	<script type="text/javaScript" src="get_set_msg.js"></script>
 </head>
 
-<body class="body" style="background-color:#3399ff;">
+<body class="body" style="background-color:#3399ff;" onload="updateMessagesOnPage()">
 	<nav class="mbHeadernav">
 			<div class="mbtablediv">
 				<table>
@@ -53,30 +53,12 @@
 			
 		</section>
 			<section class="msg_list" id="msg_list">
-			
-				<!--Each message is its own list goes to the left or right -->
-				<!--
-				<ul id="sent_msg" style="text-align:right; padding:5px;">
-					<li style="font-family: Arial, Helvetica,sans-serif;font-size:12px;">email@email.com</li>
-					<li class="txt_bub" style="background-color: #004BAA;color:white;">Hello</li>
-					
-				</ul>
-				<ul id="sent_msg" style="text-align:left; padding:5px;">
-					<li style="font-family: Arial, Helvetica,sans-serif;font-size:12px;">email2@email.com</li>
-					<li class="txt_bub" style="background-color:#f0ede6;color:black;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>	
-				</ul>
-				<ul id="sent_msg" style="text-align:right; padding:5px;">
-					<li style="font-family: Arial, Helvetica,sans-serif;font-size:12px;">email@email.com</li>
-					<li class="txt_bub" style="background-color: #004BAA;color:white;">Hello world</li>	
-				</ul>
-				-->
-				
 				
 			</section>
 			
 				<section class="msg_txtbox">
+				
 						<table class="inputTxt">
-							<form action = "set_messages.php" method="post" enctype="multipart/form-data">
 							<tr rowspan="2">
 								<td>
 									</br><input type="text" name="name" id="name" style="height:30px;" placeholder="Name"/>
@@ -85,15 +67,18 @@
 									</br><input type="text" name="email" id="email" style="height:30px;" placeholder="Email"/>
 								</td>
 								<td>
-									</br><input type="button" id="sendBtn" style="height:30px; background-color:#7db3e3;" value="Send" onclick="set_message()"/>
+									</br><input name="set" type="button"  id="sendBtn" style="height:30px; background-color:#7db3e3;" value="Set" onclick="set_cookie()"/>
 								</td>
+								
 							</tr>
 							<tr>
 								<td colspan="3">
-									<textarea name="txtbox" id="txtbox" rows="4" placeholder="Write message" style="width:97.9%;"></textarea>
+									<textarea name="textmessage" id="txtbox" rows="4" placeholder="Write message" style="width:97.9%;" ></textarea>
+								</td>
+								<td>
+									</br><input name="send" type="button"  id="sendBtn" style="height:30px; background-color:#7db3e3;" value="Send" onclick="set_message()"/>
 								</td>
 							</tr>
-							</form>		
 						</table>
 					
 				</section>
