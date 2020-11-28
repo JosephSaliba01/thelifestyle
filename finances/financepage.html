@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type = "text/css" href="finances_css/financepage_css.css"/>
-    <link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
+    <link rel="stylesheet" type = "text/css" href="financepage_css.css"/>
+    <link rel="stylesheet" type = "text/css" href="../menubar+footerCSS.css"/>
 </head>
 
 
@@ -13,7 +13,7 @@
             <table>
                 <tr>
                     <td>
-                        <img src="finances_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
+                        <img src="potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
                     </td>
                     <td>
                         <a href="../HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
@@ -26,7 +26,7 @@
                         <a href="../Education/education.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
                     </td>
                     <td class="mbheadertd">
-                        <a href="financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
+                        <a href="../finances/financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
                     </td>
                 </tr>
             </table>
@@ -45,44 +45,52 @@
 
     <div class="MainDivTag">
         
-        <div class="picturediv">
-            <div>
-                <div class="blackdiv" style="margin-left: 5%;">
-                    <p>Let us Guide you through the essential fundementals of financial managment.</p>
-               </div>
-            </div>
-            
-            <div style="margin-bottom: 10px; align-self: flex-end; margin-bottom: 20px;">
-                <div class="blackdiv" style="margin-right: 5%; margin-bottom: 20px;">
-                    <p>Our Experts-verified system assists our users with the best salary and expenses managment</p>
-               </div>
-            </div>
-
-        </div>
-
-        <div class="financescontainerwrappers">
-            <div class="financescontainers">
-                    
-                <h1>Create or Load a Finance File via an Email Address</h1>
-
-            </div>
-        </div>
-
-        <div class="financescontainerwrappers">
-            <div class="financescontainers">
-                    
-                <h1>Salary and Expenses Calculator</h1>
-
-            </div>
+        <div class="picturediv", id="pic1">
+            <div class="blackdiv" id="blackdiv1">
+                    <p>
+                        let money grow on trees
+                    </p>
+            </div>    
         </div>
         
-        <div class="financescontainerwrappers">
-            <div class="financescontainers">
-                    
-                <h1>Proximity Job Finder on request (Using Google maps)</h1>
-
+        <div class="picturediv", id="pic2">
+            <div class="blackdiv" id="blackdiv2">
+                <p>
+                    "the best managment helper ever"
+                </p>
+            </div>    
+            <div class="blackdiv" id="blackdiv3">
+                <p>
+                    based on experts' opinions
+                </p>
             </div>
         </div>
+
+        <div class="picturediv", id="pic3">
+            <div class="blackdiv" id="blackdiv4">
+                <h1>
+                    Benefit From:
+                </h1>
+                <ul id="blackdiv4ul">
+                    <li>
+                        Experts' Advices on Investments
+                    </li>
+                    <li>
+                        Database that will hold all your spendings and income information
+                    </li>
+                    <li>
+                        Calculator that shows all the numbers you need for planning
+                    </li>
+                    <li>
+                        Job-locator that informs you of nearby jobs of your interest
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="blackdivp", style="font-size: 3vw; margin-top: 25%;">Start Earning And Spending</p>
+        <a href="entryform.html" style="text-decoration: none;"><p id="createfinanceaccount">Create A Finance Profile Now</p></a>
+        <a href="" style="text-decoration: none;"><p id="alreadyhaveone">I already have a finance profile</p></a>
+
     </div>
 </div>  
 
