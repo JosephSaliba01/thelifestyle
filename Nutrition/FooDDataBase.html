@@ -4,14 +4,15 @@
 <head>
 
    <meta charset="UTF-8" />
-   <title></title>
-	
-   <script   type="text/javascript" src="Fitness&Nutrition_js/FoodData.js">
-   
-   
+   <title></title>   
+   <script>
+  
+
    </script>
    
    <style>                
+   
+   
    
 #Myapp{
 width:800px; 
@@ -24,24 +25,93 @@ width: 455px;
 }
 
 
+h1{
+text-align: center;
+    font-family: "Helvetica";
+    font-size:0.8rem;
+}
+
 #color{
 
+background-color: #F8F8F8;
+height: 515px;
+width : 500px;
+}
+
+
+
+#IDZ {
+height: 380px;
+width : 460px;
+}
+
+
+#color2{
+ width: 460px;
+ height: 520px;
 background-color: #F8F8F8;
 }
 
 #TableApp{
 margin:0 auto;
-  background-color: #483D8B;
+  background-color: #00001a;
 border-style: solid;
- width: 800px;
-  color: black;
+ width: 1200px;
+  color: white;
   overflow: scroll;
-  height: 300px;
+  height: 500px;
+}
+
+#Thebutton {
+  background-color: #8B0000; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ font-size : 20px;
+}
+
+#image {
+position: relative;
+top: 0px; left: 80px;
+  
+  
+}
+
+#activities {
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
 }
 
 
+#weight {
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 
+}
 
+#Field {
+ width: 460px;
+ height: 288px;
+ background-color: #F8F8F8;
+ color: black;
+}
 
 #weight{
 width: 30%;
@@ -54,6 +124,9 @@ margin:0 auto;
   width: 1500px;
   
   background-color: #F8F8F8;
+  
+  
+  border-style: solid;
 }
 
 #row {
@@ -123,7 +196,7 @@ margin:0 auto;
 
 
 </head>
-<body>
+<body >
 
 <div class="body">
 		<nav class="mbHeadernav">
@@ -166,28 +239,30 @@ margin:0 auto;
 		<table  id="TableApp">
 		<tr >
 		<td>
+		<h1 id="Title" >  Your own goals   </h1>
+		<div id="color2" >
 		
-<canvas id="Calories" width="350" height="300"></canvas>
+<canvas id="Test" width="200" height="190"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
 		
-		<script>
+		<script > 
 		
-		Graph2(1500,2500,3000);
-		function Graph2(a , b ,c ){
+		
+		function Graph3(a , b ,c ){
 	
 	
  var text = document.getElementById('p3');
 	var text2 = document.getElementById('p4');
 	var text3 = document.getElementById('p5');
 	
-var ctx = document.getElementById('Calories').getContext('2d');
+var ctx = document.getElementById('Test').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Maintenance', 'Bulk', 'Cut'],
+        labels: [ 'Cut','Maintenance', 'Bulk'],
         datasets: [{
-            label: 'Number of calories per day.',
+              labels: ['Maintenance', 'Bulk', 'Cut'],
             data: [a, b, c],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -209,25 +284,32 @@ var myChart = new Chart(ctx, {
                     beginAtZero: true
                 }
             }]
-        }
+        },	
+		legend: {
+    display: false
+  }
     }
 });
 
 
 }
-		
+		Graph3(1500,2500,3000);
 		
 		</script
 		
+		<div>
+		
 		</td>
 		<td  id "IDZ">
-		<h1> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Your Nutrition maximasor </h1>
+		 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		<h1> Your Nutrition maximasor </h1>
 		 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-		<img src="Fitness&Nutrition_img/NutritionLogo2.png" alt="logo" style="width:400px;height:300px; float: left;">
-		
+		  &nbsp; &nbsp; &nbsp;
+		<img src="Fitness&Nutrition_img/NutritionLogo3.png" alt="logo" style="width:300px;height:200px; float: left;"  id="image">
+	
 		
 		<form>
-								<fieldset>
+								<fieldset id="Field">
 								Food choice
 									<select name="activity" id="activities">
 									<option value="Almonds" id="Almonds" >Almonds</option>
@@ -254,12 +336,15 @@ var myChart = new Chart(ctx, {
 									<br> <br> 
 									<label for="wheight">Weight in g</label>
 										<input type="text" id="weight" name="weight"><br><br>
-										<button type="button" value="Submit"   onclick="Calculation()" >Verify</button>
-										&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;  &nbsp;
-										<button type="button" value="Add"   onclick="" >Add</button>
+										<button type="button" value="Submit"   onclick="Calculation()" id= "Thebutton" >Verify</button>
+										&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  
+										<button type="button" value="Add"   onclick="mySort()"  id= "Thebutton" );
+										>Add</button>
 										&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-										&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-										<button type="button" value="Log"   onclick="racking()" >Log</button>
+										
+										<button type="button" value="Log"   onclick="racking()"  id= "Thebutton" >Log</button>
+										
+										<button type="button" value="Try"   onclick="Add()"  id= "Thebutton" >Test</button>
 									
 									</fieldset>
 									</form>
@@ -267,12 +352,10 @@ var myChart = new Chart(ctx, {
 		</td>
 		
 		<td>
-		
+		<h1 id="Title" >  Daily food consumption    </h1>
 		<div id="color"> 
 		
-		<h1 id="Title" >  Daily food consumption    </h1>	
-		
-		<canvas id="Tracking" width="500" height="350"></canvas>
+		<canvas id="Tracking" width="300" height="300"></canvas>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
@@ -284,8 +367,8 @@ var ctx = document.getElementById('Tracking').getContext('2d');
 
 function racking() {
 
-ctx.canvas.width = 500;
-ctx.canvas.height = 350;
+ctx.canvas.width =300;
+ctx.canvas.height = 300;
 
 	var weight = document.getElementById("weight");
 	
@@ -403,10 +486,24 @@ maintainAspectRatio: false
 		
 		<canvas id="Calories" width="100" height="100"></canvas>
 		
+		
+		
+		<script>
+		
+		 var y = document.getElementById("activities");
+   sessionStorage.setItem("Object", JSON.stringify(y));
+  var x  =   sessionStorage.getItem("Object");
+   var w = JSON.parse(x);
+ // alert(w.value)
+function mySort() {
+  window.location.href="Add.html";
+}
+</script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
 
-<script src='FoodData.js'></script>
+<script language="javascript" src='Fitness&Nutrition_js/FoodData.js'>    </script>
 </td>
 
 <td>  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
@@ -437,6 +534,8 @@ maintainAspectRatio: false
 
 		</div>
 	
+	
+	 <script   type="text/javascript" src="Fitness&Nutrition_js/FoodData.js"> </script>
 </body>
 
 

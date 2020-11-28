@@ -1,0 +1,13 @@
+{
+    "__created_at": 1606361723,
+    "__updated_at": 1606361723,
+    "data": {
+        "name": "Ratiba",
+        "lname": "Zoghlami",
+        "password": "MMam@1995",
+        "username": "dsa",
+        "Finance": "1",
+        "FitnessNutrition": "2",
+        "EducationProfesional": "1"
+    }
+}

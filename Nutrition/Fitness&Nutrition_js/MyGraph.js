@@ -1,58 +1,29 @@
 
-function racking() {
-
-	var weight = document.getElementById("weight");
+		
+		function Graph3(a , b ,c ){
 	
-if(weight.value =="")
-	alert("Please enter a value for weight and verify the food you're entering before logging the value. ");
 	
-	else {
-
- var text = document.getElementById('calor');
-	var text2 = document.getElementById('protein');
-	var text3 = document.getElementById('carbs');
-	var text4 = document.getElementById('fats');
-
-
-	Graph2(text2.innerHTML,text4.innerHTML,text3.innerHTML,text.innerHTML );
+ var text = document.getElementById('p3');
+	var text2 = document.getElementById('p4');
+	var text3 = document.getElementById('p5');
 	
-	}
-	
-	function Graph2(a , b , c ,d ){
-	
-var ctx = document.getElementById('Tracking').getContext('2d');
-
-var value1 = "0";
-var value2 = "0";
-var value3 = "0";
-var value4 = "0";
-
-value1+=a;
-value2+=b;
-value3+=c;
-value4+=d;
-
+var ctx = document.getElementById('Test').getContext('2d');
 var myChart = new Chart(ctx, {
-
-
-    type: 'bar',label: 'Number of calories per day.',
-	 tooltipTitleFontSize: 0,
+    type: 'bar',
     data: {
-        labels: ['Proteins', 'Fats', 'Carbs ' ,'Calories '],
+        labels: ['Maintenance', 'Bulk', 'Cut'],
         datasets: [{
-		 // label: 'Fats',
-            data: [value1, value2, value3,value4],
+           
+            data: [a, b, c],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-				'rgb(152,251,152)'
+                'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
-                'rgba(255, 159, 64, 1)',
-					'rgb(0,128,0)'
+                'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
         }]
@@ -62,15 +33,12 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     beginAtZero: true
-
                 }
             }]
-        },
-legend: {
-    display: false
-  }		
+        }
     }
-	
-}) 
+});
+
+
 }
-}
+		Graph3(1500,2500,3000);

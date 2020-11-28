@@ -1,3 +1,39 @@
+
+var NewElements = new Array(999999);
+var count =0;
+function Add(){
+	  
+	  //salert(Object.Name);
+
+var value = document.getElementById("activities");
+
+var NewObject = {Name :"Lemon Juice", ProteinPerGram:"0.7", CarbPerGram:"0.2", FatPerGram:"0.7" , CaloriesPerGram:"0.9" , image :"https://www.foodiesfeed.com/wp-content/uploads/2020/05/suco-de-limao-com-slash-349x524.jpg"};
+
+
+//https://www.foodiesfeed.com/wp-content/uploads/2020/05/suco-de-limao-com-slash-349x524.jpg
+
+
+value.options[value.length] = new Option(NewObject.Name, NewObject.Name);
+   
+  
+     //console.log(localStorage.getItem("Object"));
+   
+   //var x  =   sessionStorage.getItem("Object");
+   
+  // var w = JSON.parse(x);
+ // alert(w.value);
+ /*
+  var option = document.createElement("option");
+  option.text = NewObject.Name;
+  x.add(option);
+  */
+   NewElements[count] = NewObject;   
+   
+   count++;
+   
+
+}
+
 function Calculation() {
 	
 	var Almonds = {ProteinPerGram:"0.2", CarbPerGram:"0.2", FatPerGram:"0.5" , CaloriesPerGram:"5.8"};
@@ -485,6 +521,44 @@ function Calculation() {
 		 Graph(weight.value *PeanutButter.ProteinPerGram, weight.value *PeanutButter.CarbPerGram, weight.value * PeanutButter.FatPerGram);
 		
 	}
+	
+	
+	else {
+		
+		for(var i = 0; i < NewElements.length ;i++ ){
+			if(value.value == NewElements[i].Name){
+				
+			
+		calor.innerHTML = Math.round (weight.value *  NewElements[i].CaloriesPerGram);
+		
+		
+		protein.innerHTML =  Math.round (weight.value * NewElements[i].ProteinPerGram);
+		
+		cabrs.innerHTML = Math.round (weight.value *  NewElements[i].CarbPerGram);
+		
+		fats.innerHTML =  Math.round (weight.value * NewElements[i].FatPerGram);
+		
+		
+		 gram.innerHTML =  weight.value;
+		 
+		 	image.src =NewElements[i].image;
+		 
+		 Graph(weight.value *NewElements[i].ProteinPerGram, weight.value *NewElements[i].CarbPerGram, weight.value * NewElements[i].FatPerGram);			
+				
+			}	
+		}	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	}
 
