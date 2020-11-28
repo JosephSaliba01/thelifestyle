@@ -62,7 +62,7 @@ $Finance = $_POST['FinanceResult'];
 $FitNutr = $_POST['FitnessAndNutritionResult'];
 $EduPro = $_POST['EduAnProResult'];
 
-echo "<p>Welcome, $FirstName, your profile is set up and you may now go to the home page and log in with your new account. When you log in the home page will be catered to what you showed interest in based on the survey from before. Good luck and enjoy!</p>";
+echo "<p>Welcome, $FirstName, your profile is set up and you may now go to the home page and log in with your new account. When you log in, the home page will be catered to what you showed interest in from the survey. Good luck and enjoy!</p>";
 echo "<h3>- THELIFESTYLE Team</h3>";
 
 $user = $database->get($Username);

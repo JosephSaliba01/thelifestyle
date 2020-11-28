@@ -1,8 +1,31 @@
+<?php
+	
+	session_start();
+$title;
+$button1;
+$button2;
+if(isset($_SESSION['username']))
+{
+
+   $title = "<h1> Welcome, ".$_SESSION['username']."!</h1>";
+   $button1 = "<a href='profile.php' class='mbloginbtn'>Profile</a>";
+   $button2 = "<a href='PHP/LogOut.inc.php' class='mbloginbtn'>Log Out</a>";
+
+}
+else
+{
+	$title = "<h1> Welcome to the LIFESTYLE.CA!</h1>";
+	$button1 = "<a href='Login.php' class='mbloginbtn'>Login</a>";
+	$button2 = "<a href='SignUp.html' class='mbheaderlinkanchors' style='text-decoration: underline;''><p class='mbheaderlinks'>Create an Account</p></a>";
+}
+
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 
 	<head>
-
 	<meta charset="UTF-8" />
 	<title></title>
 	<link rel="stylesheet" type = "text/css" href="home_css/homepage_css.css"/>
@@ -20,7 +43,7 @@
 							<img src="home_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
 						</td>
 						<td>
-							<a href="HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
+							<a href="HomePage.php" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
 						</td>
 						<td class="mbheadertd"  style="padding-left: 50px;">
 							<a href="Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
@@ -38,14 +61,21 @@
 				
 			<div id="mbloginsignupsdiv">
 					<div>
-						<a href="Login.html" class="mbloginbtn">Login</a>
+						<?php
+						echo "$button1";
+						?>
 					</div>
 					
 					<div>
-						<a href="SignUp.html" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
+						<?php
+						echo "$button2";
+						?>
 					</div>
 			</div>
 		</nav>
+		<?php
+			echo "$title";
+		?>
 		<div class="MainDivTag">
 			<div class="SecondMainDivTag">
 
