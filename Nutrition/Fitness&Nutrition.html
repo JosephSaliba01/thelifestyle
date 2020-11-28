@@ -6,11 +6,14 @@
    <meta charset="UTF-8" />
    <title></title>
 	
-   <script   type="text/javascript" src="Fitness&Nutrition_js/form.js">
+   <script   type="text/javascript" src="Fitness&Nutrition_js/form1.js">
+   
+   
    </script>
+   
+   <script> src"https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
    <link rel="stylesheet" type = "text/css" href="Fitness&Nutrition_css/Fitness&Nutrition_css.css"/>
    <link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
-
 
 </head>
 <body>
@@ -77,14 +80,15 @@
 						train for a marathon or heavy-duty strength training, we can give you tips and advice on how to achieve your goal. 
 						Throughout this section, we'll help you calculate what your daily calorie intake should be, along with some videos
 						and myths about the proper way to train. .</p>
-		<br>
+		
 	
+			
 		<div class="background-section2">
 			<table  class="Table2">
 				<tr>
 					<td>
+					<h1> How much energy do you need?</h1>
 						<ul>
-						<h1> How much energy do you need?</h1>
 						<li> Use our calories calculator to determine how much you need.</li>
 						<br>
 						<li> Tailored to your bodies needs.</li>
@@ -93,8 +97,11 @@
 						<br>
 						
 						</ul>
+						<p id = "p3" style="font-size:15px">   </p> 
+						<p id = "p4" style="font-size:15px">   </p> 
+						<p id = "p5" style="font-size:15px">   </p> 
 					</td>
-					<td>
+					<td "width:200px;">
 					<!--Start of Calories Calculator-->
 						<div  style="width:300px;"  class ="solid"   >
 							<h1  style="font-size:15px;" > &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Calories Calculator   </h1>
@@ -121,14 +128,20 @@
 									</select>
 										<br><br>
 										<button type="button" value="Submit"   onclick="CaloricIntake()" >Submit</button>
-										<button onClick="window.location.reload();">Start Over</button>
+										<button onClick="">Graph</button>
 										<br><br><br><br>
 								</fieldset>
 							</form>
+											
+	
+<canvas id="Calories" width="50" height="50"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+
+ <script src='form1.js'></script>
+				
+					
 						</div>
-						<p id = "p3" style="font-size:20px">    </p> 
-						<p id = "p4" style="font-size:20px">    </p> 
-						<p id = "p5" style="font-size:20px">    </p> 
 						<!-- End of Calories Calculator -->
 					</td>
 				</tr>
@@ -171,10 +184,6 @@
 				</tr>
 			</table>
 		</div>
-		
-		
-		
-	
 		
 		
 		<p>
