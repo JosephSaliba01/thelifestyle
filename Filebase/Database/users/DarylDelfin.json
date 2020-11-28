@@ -1,0 +1,13 @@
+{
+    "__created_at": 1606423561,
+    "__updated_at": 1606423670,
+    "data": {
+        "name": "Daryl",
+        "lname": "Delfin",
+        "password": "PassWord123!",
+        "username": "DarylDelfin",
+        "Finance": "3",
+        "FitnessNutrition": "2",
+        "EducationProfesional": "1"
+    }
+}
