@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<!--
+// ------------------------------------------------------------------------------
+// Assignment 2
+// Written by: Maamar Kouadri ID:40057671
+// For SOEN 287 Section Section Q – Fall 2020
+// -----------------------------------------------------------------------------
+-->
+<html>
+
+<head>
+
+<script language="javascript" src='Fitness&Nutrition_js/FoodData.js'>    </script>
+
+<style>
+
+
+#NutritionTable{
+margin:0 auto;
+border-style: solid;
+ height: 650px;
+  width: 600px;
+  
+  background-color: #F8F8F8;
+}
+
+#submit{
+
+
+}
+
+#submit2{
+
+width: 125px;
+    margin-left: auto;
+    margin-right: auto;
+	
+	text-align: center;
+	
+	display: block;
+    margin: 0 auto;
+
+}
+
+#email {
+width : 50px;
+}
+
+.drag-drop{
+    width: 600px;
+     height: 50px; 
+    background-color: #1caff6;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: dashed 2px white;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 14pt;
+    transition: .5s background-color, .5s color;
+    height: 100px;
+    font-family:inherit;
+}
+
+.drag-drop.dragover{
+    background-color: #0e384c;
+    color: white;
+}
+
+.drag-drop.uploading{
+    background-color: #0e384c;
+    color: white;
+}
+
+
+</style>
+
+
+
+</head>
+
+
+<body >
+
+<div id="NutritionTable" >
+<h1> Add  your own food to the Database </h1>
+
+<p id ="p1"> In order to make sure that you are adding the right measurements please feel free to consult the following website for more accuracy.  </p>
+
+<a href="https://www.myfitnesspal.com/food/search">Fitness Pal</a>
+<br>
+<a href="https://www.nutritionix.com/">Nutritionix</a>
+
+<table>
+<tr>
+<td>
+
+<!-- Process.php -->
+
+
+
+<form action = ""
+method = "post">
+<fieldset>
+    <legend>Form:</legend>
+	
+	
+
+	
+    <label for="name">Name of the food: </label>
+    <input type="text" id="name" name="name" value="name"> <br><br>
+	
+    <label for="lname">Protein per gram: </label>
+    <input type="text" id="protein" name="protein" value="protein"><br><br>
+	
+	   <label for="lname">Carbs per gram: </label>
+    <input type="text" id="carbs" name="carbs" value="carbs"><br><br>
+	
+	   <label for="lname">Fats per gram: </label>
+    <input type="text" id="fats" name="fats" value="fats"><br><br>
+	
+	   <label for="lname">Calories per gram: </label>
+    <input type="text" id="calories" name="calories" value="calories"><br><br>
+	
+	<label for="Description"></label>
+	Please enter a small description for you newly added food .
+<textarea id="Description" name="Description" rows="4" cols="50">
+  </textarea>
+<!--<input type="submit" value="CheckID" id="true2" >  -->
+  
+</form>
+
+</fieldset>
+
+</td>
+<td class = "row2">
+&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+
+ <img id="Food" width="500" height="300" src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Golu_australia_2018.jpg/220px-Golu_australia_2018.jpg' alt="W3Schools.com" style="width:100%">
+ 
+ </td>
+</tr>
+</table>
+
+ <label for="lname"> If you have a picture for your food please copy paste the url here </label><br>
+    <input type="text" id="Url" name="Url" value="Url"> &nbsp;  &nbsp;  &nbsp;
+	
+    </form>
+	 <button  id="submit"  onclick = "Test()" >  Submit Image </button>
+	 <br>
+	 <br>
+	 
+	 <button  id="submit2"  onclick = "isImageOk()" >  Confirm </button>
+	
+<script> 
+function  Test() {
+
+//'https://www.w3schools.com/images/w3schools_green.jpg' 
+
+var name = document.getElementById("name");
+
+var protein = document.getElementById("protein");
+
+var carbs = document.getElementById("carbs");
+
+
+var fats = document.getElementById("fats");
+
+var calories = document.getElementById("calories");
+
+var text = "The name of the food is " +name.value + " the protein per gram is "+ protein.value + " the number of cabrs per gram " + carbs.value + " the number of fats per gram is " + fats.value
+
++ " and the number of calories per gram is " + calories.value;
+
+//alert(text);
+
+var verif = false;
+
+var link = document.getElementById("Url").value;
+
+var single = "'";
+var image = document.getElementById("Food");
+
+image.alt = name.value;
+
+
+image.src = link;
+
+
+
+
+//alert(isImageOk(image));
+
+//image.src = imageDropped.value;
+
+}
+
+function isImageOk() {
+
+var image = document.getElementById("Food");
+   if(image.width <=56){
+alert("The link you have entered is invalid or the image is too small please try again and copy the adress of the image correctly")
+}
+
+else {
+
+var name = document.getElementById("name");
+
+var protein = document.getElementById("protein");
+
+
+var carbs = document.getElementById("carbs");
+
+
+var fats = document.getElementById("fats");
+
+var calories = document.getElementById("calories");
+
+
+
+var Image = document.getElementById("Food");
+
+var Descrip = document.getElementById("Description");
+
+
+var NewObject = {Name :name.value, ProteinPerGram:protein.value, CarbPerGram:carbs.value, FatPerGram:fats.value , CaloriesPerGram:calories.value , 
+
+image :Image.value};
+
+
+Add(NewObject);
+
+	window.open("FooDDataBase.html");
+}
+    
+}
+
+</script>	
+	
+<!-- <script src='FoodData.js'></script> -->
+
+
+
+</div>
+
+
+</body>
+
+
+
+
+</html>

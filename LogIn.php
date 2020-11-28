@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 
 <html>
@@ -44,16 +41,6 @@ button:hover {
   background-color: #f44336;
 }
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
 .container {
   padding: 16px;
 }
@@ -76,6 +63,49 @@ span.psw {
 </style>
 
 </head>
+<?php
+require 'Filebase/vendor/autoload.php';
+if(isset($_POST["login"]))
+{//session_start();
+
+$database = new \Filebase\Database([
+    'dir' => 'Filebase/Database/users',
+	'backupLocation' => 'Filebase/Database/Backup'
+]);
+
+$Username = $_POST['username'];
+$Password = $_POST['password'];
+
+
+if($database->has($Username))
+{
+	$user = $database->get($Username);
+    
+	if($user!= null && $Password ==$user->password)
+	{
+		session_start();
+		$_SESSION["username"] = $user->username;
+		$_SESSION["firstName"] = $user->name;
+		$_SESSION["lastName"] = $user->lname;
+		$_SESSION["financePref"] = $user->Finance;
+		$_SESSION["fitNutrPref"] = $user->FitnessNutrition;
+		$_SESSION["eduProfPref"] = $user->EducationProfesional;
+		header("location: HomePage.php");
+	}
+	else
+	{
+		echo "Incorrect password";
+	}
+
+}
+else
+	{
+		echo "Account does not exists create one!";	
+	}
+}
+
+?>
+
 
 <body>
 <nav class="mbHeadernav">
@@ -86,7 +116,7 @@ span.psw {
 							<img src="home_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
 						</td>
 						<td>
-							<a href="HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
+							<a href="HomePage.php" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
 						</td>
 						<td class="mbheadertd"  style="padding-left: 50px;">
 							<a href="Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
@@ -104,11 +134,11 @@ span.psw {
 				
 			<div id="mbloginsignupsdiv">
 					<div>
-						<a href="Login.html" class="mbloginbtn">Login</a>
+						<a href="Login.php" class="mbloginbtn">Login</a>
 					</div>
 					
 					<div>
-						<a href="SignUp.php" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
+						<a href="SignUp.html" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
 					</div>
 			</div>
 		</nav>
@@ -116,7 +146,7 @@ span.psw {
 
 <h2>Login Form</h2>
 
-<form action="PHP/Log_In_Process.php" method="post">
+<form  method="post" action="">
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
@@ -124,15 +154,15 @@ span.psw {
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
         
-    <button type="submit">Login</button>
+    <button type="submit" name="login">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <a href="HomePage.php"><button type="button" class="cancelbtn" onclick="">Cancel</button></a>
+    <span class="psw"><a href="#">Forgot password?</a></span>
   </div>
 </form>
 

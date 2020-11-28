@@ -2,7 +2,22 @@
 
 <head>
 
+<style type="text/css">
+	/* unvisited link */
+a:link {
+  color: blue;
+}
 
+/* mouse over link */
+a:hover {
+  color: green;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
 <link rel="stylesheet" type = "text/css" href="../home_css/Sign_Up_CSS.css">
 <link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
 
@@ -35,7 +50,7 @@ $database = new \Filebase\Database([
 ]);
 
 echo "<h1>Account creation succesful!</h1>";
-echo "<p>Nice! You made an account. Well in order for us to get to know you better please fill out this survey to know what type of content you'd like to see! Once you are done, each page might have an event you might be intereted in to add it to your profile specific schedule-builder. More on that later!";
+
 
 $FirstName = $_POST['fName'];
 $LastName = $_POST['lName'];
@@ -43,22 +58,33 @@ $LastName = $_POST['lName'];
 $Password = $_POST['psw'];
 $Username = $_POST['userID'];
 
+$Finance = $_POST['FinanceResult'];
+$FitNutr = $_POST['FitnessAndNutritionResult'];
+$EduPro = $_POST['EduAnProResult'];
+
+echo "<p>Welcome, $FirstName, your profile is set up and you may now go to the home page and log in with your new account. When you log in, the home page will be catered to what you showed interest in from the survey. Good luck and enjoy!</p>";
+echo "<h3>- THELIFESTYLE Team</h3>";
+
 $user = $database->get($Username);
     $user->name = $FirstName;
     $user->lname = $LastName;
     //$user->email = $email;
 	$user->password = $Password ;
 	$user->username = $Username ;
-	
+
+	$user->Finance = $Finance;
+	$user->FitnessNutrition = $FitNutr;
+	$user->EducationProfesional = $EduPro;
+
     $user->save();
 
 ?>
-<div class="wrapper">
-
-</div>
-
-
-
+<br><br>
+<br><br>
+<br><br>
+<a href="../HomePage.php"><h1 id="mbMainMenuHeader">CLICK HERE TO GO HOME</h1></a>
+<br>
+<br>
 </div>
 
 	<div class="homepagefooter">
