@@ -14,9 +14,10 @@ a:hover {
 }
 
 /* selected link */
-a:active {
+a {
   color: blue;
-}
+}	
+
 </style>
 <link rel="stylesheet" type = "text/css" href="../home_css/Sign_Up_CSS.css">
 <link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
@@ -72,6 +73,8 @@ $user = $database->get($Username);
 	$user->password = $Password ;
 	$user->username = $Username ;
 
+	$user->hasProfilePicture = false;
+
 	$user->Finance = $Finance;
 	$user->FitnessNutrition = $FitNutr;
 	$user->EducationProfesional = $EduPro;
@@ -81,8 +84,9 @@ $user = $database->get($Username);
 ?>
 <br><br>
 <br><br>
-<br><br>
 <a href="../HomePage.php"><h1 id="mbMainMenuHeader">CLICK HERE TO GO HOME</h1></a>
+<img src="img/checkmark.png" alt="Account Creation Succesful" width="300" height="300">
+
 <br>
 <br>
 </div>

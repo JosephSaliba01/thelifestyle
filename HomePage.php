@@ -8,7 +8,7 @@ if(isset($_SESSION['username']))
 {
 
    $title = "<h1> Welcome, ".$_SESSION['username']."!</h1>";
-   $button1 = "<a href='profile.php' class='mbloginbtn'>Profile</a>";
+   $button1 = "<a href='Profile.php' class='mbloginbtn'>Profile</a>";
    $button2 = "<a href='PHP/LogOut.inc.php' class='mbloginbtn'>Log Out</a>";
 
 }
@@ -60,17 +60,12 @@ else
 			</div>
 				
 			<div id="mbloginsignupsdiv">
-					<div>
 						<?php
 						echo "$button1";
 						?>
-					</div>
-					
-					<div>
 						<?php
 						echo "$button2";
 						?>
-					</div>
 			</div>
 		</nav>
 		<?php

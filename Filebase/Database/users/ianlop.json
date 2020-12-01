@@ -1,13 +1,15 @@
 {
-    "__created_at": 1606579810,
-    "__updated_at": 1606579810,
+    "__created_at": 1606790463,
+    "__updated_at": 1606791360,
     "data": {
         "name": "Ian",
         "lname": "Lopez",
         "password": "PassWord123!",
         "username": "ianlop",
-        "Finance": "1",
+        "hasProfilePicture": true,
+        "Finance": "4",
         "FitnessNutrition": "4",
-        "EducationProfesional": "0"
+        "EducationProfesional": "3",
+        "profilePicture": "maxresdefault (2).jpg"
     }
 }

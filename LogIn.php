@@ -65,6 +65,8 @@ span.psw {
 </head>
 <?php
 require 'Filebase/vendor/autoload.php';
+$ErrorOccured = false;
+$ErrorMsg;
 if(isset($_POST["login"]))
 {//session_start();
 
@@ -75,7 +77,6 @@ $database = new \Filebase\Database([
 
 $Username = $_POST['username'];
 $Password = $_POST['password'];
-
 
 if($database->has($Username))
 {
@@ -94,13 +95,25 @@ if($database->has($Username))
 	}
 	else
 	{
-		echo "Incorrect password";
+		$ErrorOccured = true;
+		if($Password != $user->password)
+		{
+			$ErrorMsg = "<p id='ErrorMsg' style='color:red;' >Incorrect password!</p>";
+		}
+		else if($user == null)
+		{
+			$ErrorMsg = "<p id='ErrorMsg' style='color:red;' >User does not exists!</p>";	
+		}
+		else
+		{
+			$ErrorMsg = "<p id='ErrorMsg' style='color:red;' >Error occured</p>";	
+		}
 	}
-
 }
 else
 	{
-		echo "Account does not exists create one!";	
+		$ErrorOccured = true;
+		$ErrorMsg =  "<p id='ErrorMsg' style='color:red;' >Account does not exists create one!</p>";	
 	}
 }
 
@@ -153,11 +166,17 @@ else
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
-        
+        <?php
+    	if($ErrorOccured)
+    	{
+    		echo "$ErrorMsg";
+    	}
+    ?>
     <button type="submit" name="login">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
+
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
@@ -165,8 +184,6 @@ else
     <span class="psw"><a href="#">Forgot password?</a></span>
   </div>
 </form>
-
-  
 
 </body>
 	<div class="homepagefooter">
