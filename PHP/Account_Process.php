@@ -3,19 +3,18 @@
 <head>
 
 <style type="text/css">
-	/* unvisited link */
-a:link {
-  color: blue;
-}
 
-/* mouse over link */
-a:hover {
-  color: green;
-}
+#accSuc{
+	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 50%;
+  height: 80%;
+  border: 20px solid #660066;
+ background: white;
+  margin: auto;
+  margin-top: 40px;
 
-/* selected link */
-a {
-  color: blue;
 }	
 
 </style>
@@ -50,8 +49,23 @@ $database = new \Filebase\Database([
 	'backupLocation' => '../Filebase/Database/Backup'
 ]);
 
-echo "<h1>Account creation succesful!</h1>";
-
+$counter_name = "../Filebase/counter.txt";
+$userCount;
+if (!file_exists($counter_name)) {
+  $f = fopen($counter_name, "w");
+  fwrite($f,"0");
+  $counterVal = 0;
+  fclose($f);
+}
+else
+{
+	$r = fopen($counter_name, "r");
+	$counterVal = (int) fread($r, filesize($counter_name));
+	$w = fopen($counter_name, "w");
+	fwrite($w, ++$counterVal);
+	fclose($r);
+	fclose($w);
+}
 
 $FirstName = $_POST['fName'];
 $LastName = $_POST['lName'];
@@ -63,8 +77,8 @@ $Finance = $_POST['FinanceResult'];
 $FitNutr = $_POST['FitnessAndNutritionResult'];
 $EduPro = $_POST['EduAnProResult'];
 
-echo "<p>Welcome, $FirstName, your profile is set up and you may now go to the home page and log in with your new account. When you log in, the home page will be catered to what you showed interest in from the survey. Good luck and enjoy!</p>";
-echo "<h3>- THELIFESTYLE Team</h3>";
+echo "<div id='accSuc'><center><h1 id=''>Account creation succesful!</h1></center><p>Welcome, $FirstName, your profile is set up and you may now go to the home page and log in with your new account. When you log in, the home page will be catered to what you showed interest in from the survey. Good luck and enjoy!</p>";
+echo "<center><h3>- THELIFESTYLE Team</h3></center>";
 
 $user = $database->get($Username);
     $user->name = $FirstName;
@@ -79,14 +93,16 @@ $user = $database->get($Username);
 	$user->FitnessNutrition = $FitNutr;
 	$user->EducationProfesional = $EduPro;
 
+	$user->userID = $counterVal;
     $user->save();
 
 ?>
 <br><br>
-<br><br>
-<a href="../HomePage.php"><h1 id="mbMainMenuHeader">CLICK HERE TO GO HOME</h1></a>
-<img src="img/checkmark.png" alt="Account Creation Succesful" width="300" height="300">
-
+<center><a href="../Login.php" class="mbloginbtn">Login now!</a></center>
+<br><br><br>
+<center><img src="img/checkmark.png" alt="Account Creation Succesful" width="200" height="200"></center>
+</div>
+<br>
 <br>
 <br>
 </div>
