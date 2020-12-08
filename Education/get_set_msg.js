@@ -7,6 +7,7 @@ function set_cookie(){
 		return false;
 	}
 	document.cookie = "userEmail="+email;
+	document.getElementById("setid").innerHTML = "";//Deletes set button so the cookie cannot be changed
 	return true;
 }
 function get_cookie(key) {
@@ -20,14 +21,13 @@ function get_cookie(key) {
 	}
 	return "";
 }
-function updateMessagesOnPage(){
+function updateMessagesOnPage(){//displays messages
 	var textList = "";
 	
 	var xmlhttp = new XMLHttpRequest();
 	
 	var update = setInterval(function(){
 		var email = get_cookie("userEmail");
-		
 		xmlhttp.onreadystatechange = function(){
 			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 				var result = xmlhttp.responseText.split("\n");
@@ -63,10 +63,10 @@ function updateMessagesOnPage(){
 		};
 		xmlhttp.open("GET","retrieve_messages.php",true);
 		xmlhttp.send();
-	},2000);	
+	},1000);	
 	
 }
-function set_message(){
+function set_message(){//sends messages to database
 	var text_message = document.getElementById("txtbox").value;
 	var username = document.getElementById("name").value;
 	var email = document.getElementById("email").value;
@@ -76,10 +76,7 @@ function set_message(){
 		
 		xmlhttp.onreadystatechange = function(){
 			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-				var newText = "<ul id='sent_msg' style='text-align:right; padding:5px;'><li style='font-family: Arial, Helvetica,sans-serif;font-size:12px;'>"+ 
-				email +"</li><li class='txt_bub' style='background-color: #004BAA;color:white;'>"+ 
-				text_message+"</li></ul>\n";
-				document.getElementById("msg_list").innerHTML += newText;
+				
 				document.getElementById("txtbox").value = "";
 				document.getElementById("msg_list").scrollTop = document.getElementById("msg_list").scrollHeight;
 			}

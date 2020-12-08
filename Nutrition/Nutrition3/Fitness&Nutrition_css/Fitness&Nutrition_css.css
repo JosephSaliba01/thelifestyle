@@ -1,0 +1,344 @@
+
+body {
+	margin: 0px;
+	background-color: white;
+}
+
+p{
+	font-size: 25px;
+}
+
+.text{
+ color: white;
+ padding-bottom:40%;
+}
+
+h1{
+	font-weight:normal; 
+	font-size: 20px;
+}
+
+
+#blackdiv1 {
+    margin-left: 0%;
+    margin-right: 0%;
+	background-color: linear-gradient(0deg, rgba(0,0,0,10) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)
+}
+
+#pic1 {
+    background-image: linear-gradient(0deg, rgba(0,0,0,10) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%), url("../Fitness&Nutrition_img/Girl.jpg");
+    margin-top: 0%;
+}
+
+#pic4 {
+    background-image: linear-gradient(0deg, rgba(0,0,0,10) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,1) 100%), url("../Fitness&Nutrition_img/hang.jpg");
+    margin-top: 0%;
+}
+
+#pic2 {
+    background-image: linear-gradient(0deg, rgba(0,0,0,10) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,.3) 100%), url("../Fitness&Nutrition_img/food-Top-View.jpg");
+    margin-top: -1.5%;
+}
+
+#pic3 {
+    background-image: linear-gradient(0deg, rgba(0,0,0,10) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,.7) 100%), url("../Fitness&Nutrition_img/chop.jpg");
+    margin-top: -1.5%;
+}
+
+#pic5 {
+    background-image: linear-gradient(0deg, rgba(0,0,0,10) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,1) 100%), url("../Fitness&Nutrition_img/yo.jpg");
+    margin-top: 0%;
+}
+
+.intro-wrap{
+	background: linear-gradient(to bottom, black, white);
+}
+
+.intro{
+	margin-right:10%;
+	margin-left:10%;
+	background: linear-gradient(to bottom, black, white);
+}
+
+.pyramid{
+	text-align:center;
+	z-index:2;
+}
+
+.Pyramid-pic1{
+	padding-left:1000px;
+	margin-bottom:-910px;
+	z-index:2;
+}
+
+.pic-Pyramid{
+	box-shadow: 10px 10px 10px black;
+}
+
+.Pyramid-pic2{
+	padding-left:250px;
+	margin-left:10%;
+	margin-bottom:-900px;
+	z-index:1;
+	color:black;
+}
+	
+.white-box{
+	padding-left:50px;
+	padding-right:50px;
+	color:black;
+	box-shadow: 5px 10px 10px black;
+	background: rgba(255, 255, 255, 0.5);  /* Black color with 50% alpha/opacity */
+}
+
+#text1 {
+	text-align:left;
+}
+
+.gray-white{
+	background: linear-gradient(to bottom, white, gray);
+}
+
+.3-menu-wrap{
+	padding-top:800px;
+	z-index:3;
+}
+
+.MainDivTagBanner{
+	margin-right: 175px;
+	margin-left: 175px;
+	color:black;
+}
+
+.MainDivTag .picturediv {
+    height: 1000px;
+    overflow-x: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color:white;
+    display: flex;
+    align-items: center;
+    margin-top: 175px;
+	margin-left:-11.3%;
+	Margin-right:-11.3%;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.background-section2 {
+	background-color:#F8F8F8;
+	width:100%;
+	margin:auto;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.background-section3 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Fitness&Nutrition_img/food-Top-View.jpg");
+	width:100%;
+	margin:auto;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.Table2{
+	font-size: 17px;
+	width: 100%;
+}
+.Table2 a:visited{
+	color:black;
+}
+
+.Table2 a:link{
+	color:black;
+}
+
+.Table3{
+	width: 100%;
+	color:white;
+}
+
+.Table4{
+	font-size: 17px;
+	width: 95%;
+}
+
+.body{
+	background-color: #222222;
+	position: relative;
+}
+
+
+.MainDivTag{
+	margin-right: 175px;
+	margin-left: 175px;
+    background-color:#222222;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.SecondMainDivTag{
+    background-color: white;
+	width:100%;
+}
+
+.Headernav {
+	margin-left:auto; 
+	margin-right:auto;
+	background-color:white;
+	position: sticky;	
+	display: flex;
+}
+
+.tablediv {
+ background-color: white;
+ width: 80%;
+ float: left;
+}
+
+.loginsignupsdiv {
+	width: 20%;
+	background-color: white;
+	float: right;
+	height: auto;
+   }
+
+.loginsignuptable {
+	height: 100%;
+	padding-left: 100%;
+}   
+
+.headertd {
+	padding-right: 15px;	
+	padding-left: 15px;	
+
+}
+
+.headerlinkanchors {
+	text-decoration: none;
+}
+
+
+
+a.headerlinkanchors:visited {
+	color: black;
+}
+
+a.loginbtn:link, a.loginbtn:visited {
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 10px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	
+  }
+  
+a.loginbtn:hover, a.loginbtn:active {
+	background-color: black;
+	color: white;
+	font-size: 17px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.headerlinks {
+	font-size: 19px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#MenuForCategories{
+	text-align: center;
+}
+
+#bottomTable{
+	width:100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	border-top: 3px solid black;
+}	
+
+#MainMenuHeader{	
+	font-style: normal;
+	font-size: 25px;
+	color:black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.buttonStyle{
+	background-color: #0b4f9c;
+	color: white;
+	border-radius: 5px;
+}
+
+
+/* Bannaer */
+.banner-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Fitness&Nutrition_img/hang.jpg");
+  padding:15%;
+  overflow-x: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color:white;
+  margin-left:-11.4%;
+  margin-right:-11.4%;
+}
+
+.banner-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.food2{
+	background-image: url("../Fitness&Nutrition_img/npyramid.jpg");
+	background-repeat: no-repeat;
+	width: 600px;
+	height:400px;
+}
+
+.surveySection{
+	text-align: center;
+}
+	
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  text-align:center;
+  background-color:white;
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color:gray;
+}
+
+.mini-Image{
+	width:23%;
+	height:30%;
+	float:center;
+}
+
+.mini-Image2{
+	width:40%;
+	height:50%;
+	float:center;
+}
+
+.mini-Image3{
+	width:12%;
+	height:23%;
+	float:center;
+}
+	

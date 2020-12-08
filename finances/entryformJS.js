@@ -1,5 +1,32 @@
 
 var counter = 0;
+
+function Update(a , b, c, d, e, f, g){
+    // Create our XMLHttpRequest object
+
+
+    var hr = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "financeinformation.php";
+
+
+    var vars = "jobarray="+a+"&providersarray="+b+"&loanarray="+c+"&childrenarray="+d+"&incometotal="+e+"&loantotal="+f+"&childrenexptotal="+g;
+
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+
+        }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(vars); // Actually execute the request
+
+}
+
 function goNext() {
 
 
@@ -9,6 +36,9 @@ function goNext() {
     var dob = document.getElementById("date").value;
     var age = document.getElementById("agetxt").value;
     var cellnum = document.getElementById("cellnumber").value;
+
+    /*console.log("Tried to update info")
+    Update(firstname, lastname);*/
 
     document.getElementById("firtnamerev").innerHTML = firstname;
     document.getElementById("lastnamerev").innerHTML = lastname;
@@ -38,7 +68,7 @@ function goNext() {
                     workstatus = "Unemployed + Independent";
                     break;
             }
-            document.getElementById("jobstatusrev").innerHTML = status;
+            document.getElementById("jobstatusrev").innerHTML = workstatus;
         }
     }
     var savingsamount = document.getElementById("savingamount").value=="" ? "No Amount Saved" : document.getElementById("savingamount").value + " $";
@@ -88,6 +118,7 @@ function goNext() {
                         break;
                 }
             }
+
             break;
         case 3:
             
@@ -166,6 +197,7 @@ function goNext() {
                 document.getElementById("provlistrec").appendChild(revprovdiv);
             }
             
+            
             document.getElementById("revtotalinc").innerHTML = incometotal + " $";
 
             
@@ -214,6 +246,11 @@ function goNext() {
                 document.getElementById("childrenlistrec").appendChild(revjobdiv);
             }
             document.getElementById("revtotalchildexp").innerHTML = childrenexptotal + " $";
+
+            console.log(JSON.stringify(jobArray));
+            
+            Update(JSON.stringify(jobArray), JSON.stringify(providersArray), JSON.stringify(loanArray), JSON.stringify(childrenArray), incometotal, loantotal, childrenexptotal);
+
 
             break;
     }
@@ -330,7 +367,7 @@ function tryAddJob() {
                 }
             }
             
-            console.log(jobArray);
+            console.log(JSON.stringify(jobArray));
 
             
         };
@@ -353,7 +390,7 @@ function tryAddJob() {
         document.getElementById("userworkbody").appendChild(createddiv);
         document.getElementById("plusdiv").style.display = "flex";
 
-        console.log(jobArray);
+        console.log(JSON.stringify(jobArray));
 
         
         

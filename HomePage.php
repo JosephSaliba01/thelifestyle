@@ -4,19 +4,21 @@
 $title;
 $button1;
 $button2;
+$displaySignUp = true;
 if(isset($_SESSION['username']))
 {
 
    $title = "<h1> Welcome, ".$_SESSION['username']."!</h1>";
-   $button1 = "<a href='profile.php' class='mbloginbtn'>Profile</a>";
+   $button1 = "<a href='Profile.php' class='mbloginbtn'>Profile</a>";
    $button2 = "<a href='PHP/LogOut.inc.php' class='mbloginbtn'>Log Out</a>";
+   $displaySignUp = false;
 
 }
 else
 {
 	$title = "<h1> Welcome to the LIFESTYLE.CA!</h1>";
 	$button1 = "<a href='Login.php' class='mbloginbtn'>Login</a>";
-	$button2 = "<a href='SignUp.html' class='mbheaderlinkanchors' style='text-decoration: underline;''><p class='mbheaderlinks'>Create an Account</p></a>";
+	$button2 = "<a href='SignUp.php' class='mbheaderlinkanchors' style='text-decoration: underline;''><p class='mbheaderlinks'>Create an Account</p></a>";
 }
 
 
@@ -46,31 +48,26 @@ else
 							<a href="HomePage.php" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
 						</td>
 						<td class="mbheadertd"  style="padding-left: 50px;">
-							<a href="Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
+							<a href="Nutrition/Fitness&Nutrition.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
 
 						</td>
 						<td class="mbheadertd">
-							<a href="Education/education.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
+							<a href="Education/education.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
 						</td>
 						<td class="mbheadertd">
-							<a href="finances/financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
+							<a href="finances/financepage.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
 						</td>
 					</tr>
 				</table>
 			</div>
 				
 			<div id="mbloginsignupsdiv">
-					<div>
 						<?php
 						echo "$button1";
 						?>
-					</div>
-					
-					<div>
 						<?php
 						echo "$button2";
 						?>
-					</div>
 			</div>
 		</nav>
 		<?php
@@ -216,17 +213,67 @@ else
 					</div>
 				</div>
 
-				<p>
-					Thank you for visiting our website your attention means a lot to us.
-				</p>
-			
-				<p> <b> Click the 'Sign up' button to start your jouney!  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="SignUp.html" class="loginbtn">Sign up</a></p>   
+				
+			<?php
+			if ($displaySignUp) {
+				echo "<p>
+				Thank you for visiting our website your attention means a lot to us.
+			</p>
+			<p> <b> Click the 'Sign up' button to start your jouney!  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href='SignUp.html' class='loginbtn'>Sign up</a></p>   
 				
 				<p> If you have any questions about anything feel free to consult our F.A.Q section where we would show you how to set up your account, 
-				navigate through the website and use the tools at your disposition.</p>
+				navigate through the website and use the tools at your disposition.</p>";
+			}
+			?>
 
+			</div> 
+		</div>
+		
 
-				<script>
+	</div>
+
+	<div class="homepagefooter">
+		<div class="footerdiv">
+			<h1 class="footerheading">Start with the change now</h1>
+			<div class="EmailAddressDiv">
+				<input type="text" placeholder="Email Address" id="EmailAddressInput">
+				<a href="" class="beginnow">Begin Now</a>
+			</div>
+			
+		</div>
+
+		<div class="footerlinkswrapper">
+			<div class="footerlinksdiv">
+				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Sections</p>
+				<p><a href="">Education</a></p>
+				<p><a href="">Finances</a></p>
+				<p><a href="">Health And Fitness</a></p>
+			</div>
+			<div class="footerlinksdiv">
+				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Go To</p>
+				<p><a href="">Sign in my account</a></p>
+				<p><a href="">Schedule Builder</a></p>
+			</div>
+			<div class="footerlinksdiv">
+				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">About us</p>
+				<p><a href="">Contact</a></p>
+				<p><a href="">FAQ</a></p>
+				<p><a href="">Account</a></p>
+			</div>
+			<div class="footerlinksdiv">
+				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Why us?</p>
+				<p><a href="">Our Values</a></p>
+				<p><a href="">Our Mission</a></p>
+			</div>
+			<div class="footerlinksdiv">
+				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Follow us on</p>
+				<p><a href="">Twitter</a></p>
+				<p><a href="">Instagram</a></p>
+				<p><a href="">Facebook</a></p>
+			</div>
+		</div>
+	</div>
+	<script>
 					var myIndex = 0;
 					var myIndex2 = 0;
 					image();
@@ -278,53 +325,5 @@ else
 					y[myIndex2-1].style.display = "block";  
 					setTimeout(text, 3000); // Change image every 2 seconds
 					}
-				</script>
-
-			</div> 
-		</div>
-		
-
-	</div>
-
-	<div class="homepagefooter">
-		<div class="footerdiv">
-			<h1 class="footerheading">Start with the change now</h1>
-			<div class="EmailAddressDiv">
-				<input type="text" placeholder="Email Address" id="EmailAddressInput">
-				<a href="" class="beginnow">Begin Now</a>
-			</div>
-			
-		</div>
-
-		<div class="footerlinkswrapper">
-			<div class="footerlinksdiv">
-				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Sections</p>
-				<p><a href="">Education</a></p>
-				<p><a href="">Finances</a></p>
-				<p><a href="">Health And Fitness</a></p>
-			</div>
-			<div class="footerlinksdiv">
-				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Go To</p>
-				<p><a href="">Sign in my account</a></p>
-				<p><a href="">Schedule Builder</a></p>
-			</div>
-			<div class="footerlinksdiv">
-				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">About us</p>
-				<p><a href="">Contact</a></p>
-				<p><a href="">FAQ</a></p>
-				<p><a href="">Account</a></p>
-			</div>
-			<div class="footerlinksdiv">
-				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Why us?</p>
-				<p><a href="">Our Values</a></p>
-				<p><a href="">Our Mission</a></p>
-			</div>
-			<div class="footerlinksdiv">
-				<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Follow us on</p>
-				<p><a href="">Twitter</a></p>
-				<p><a href="">Instagram</a></p>
-				<p><a href="">Facebook</a></p>
-			</div>
-		</div>
-	</div>
+</script>
 </html>

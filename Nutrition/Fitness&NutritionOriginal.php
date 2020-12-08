@@ -1,0 +1,329 @@
+
+
+<?php
+	
+	session_start();
+$title;
+$button1;
+$button2;
+if(isset($_SESSION['username']))
+{
+
+   $title = "<h1> Welcome, ".$_SESSION['username']."!</h1>";
+   $button1 = "<a href='../profile.php' class='mbloginbtn'>Profile</a>";
+   $button2 = "<a href='../PHP/LogOut.inc.php' class='mbloginbtn'>Log Out</a>";
+
+}
+else
+{
+	$title = "<h1> Welcome to the LIFESTYLE.CA!</h1>";
+	$button1 = "<a href='../Login.php' class='mbloginbtn'>Login</a>";
+	$button2 = "<a href='../SignUp.html' class='mbheaderlinkanchors' style='text-decoration: underline;''><p class='mbheaderlinks'>Create an Account</p></a>";
+}
+
+
+?>
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+   <meta charset="UTF-8" />
+   <title></title>
+	
+   <script   type="text/javascript" src="Fitness&Nutrition_js/form1.js">
+   
+   
+   </script>
+   
+   <script> src"https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+   <link rel="stylesheet" type = "text/css" href="Fitness&Nutrition_css/Fitness&Nutrition_css.css"/>
+   <link rel="stylesheet" type = "text/css" href="../home_css/menubar+footerCSS.css"/>
+
+</head>
+<body>
+
+	<nav class="mbHeadernav">
+		<div class="mbtablediv">
+			<table>
+				<tr>
+					<td>
+						<img src="Fitness&Nutrition_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
+					</td>
+					<td>
+						<a href="../HomePage.php" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
+					</td>
+					<td class="mbheadertd"  style="padding-left: 50px;">
+						<a href="Fitness&Nutrition.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
+
+					</td>
+					<td class="mbheadertd">
+						<a href="../Education/education.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
+					</td>
+					<td class="mbheadertd">
+						<a href="../finances/financepage.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+			
+		<div id="mbloginsignupsdiv">
+						<?php
+						echo "$button1";
+						?>
+						<?php
+						echo "$button2";
+						?>
+			</div>
+	</nav>
+	
+	<section class="MainDivTag">
+		
+		
+		
+		
+		<!-- Banner -->
+		<div class="banner-image" >
+		<br><br><br><br><br><br>
+		<br><br><br><br><br><br>
+		<br><br><br><br><br><br>
+			
+			<div class="banner-text">
+				<h1 style="font-size:50px"> Work Hard! Train Hard! </h1>
+				<p> Keep It Real </p>
+			</div>
+		</div>
+		
+		
+		
+		<section class="SecondMainDivTag">
+		<br>
+		<br>
+		
+		<p class = "text"> Work hard and train hard in order to achieve results is our moto. Whether your goal is to lose weight,
+						train for a marathon or heavy-duty strength training, we can give you tips and advice on how to achieve your goal. 
+						Throughout this section, we'll help you calculate what your daily calorie intake should be, along with some videos
+						and myths about the proper way to train. .</p>
+		
+	
+			
+		<div class="background-section2">
+			<table  class="Table2">
+				<tr>
+					<td>
+					<h1> How much energy do you need?</h1>
+						<ul>
+						<li> Use our calories calculator to determine how much you need.</li>
+						<br>
+						<li> Tailored to your bodies needs.</li>
+						<br>
+						<li> Follow our recipes after to know the best and healthies way to gain them.</li>
+						<br>
+						
+						</ul>
+						<p id = "p3" style="font-size:15px">   </p> 
+						<p id = "p4" style="font-size:15px">   </p> 
+						<p id = "p5" style="font-size:15px">   </p> 
+					</td>
+					<td "width:200px;">
+					<!--Start of Calories Calculator-->
+						<div  style="width:300px;"  class ="solid"   >
+							<h1  style="font-size:15px;" > &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Calories Calculator   </h1>
+							<form>
+								<fieldset>
+									<label for="age">Age </label> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+										<input type="text" id="age" name="age"><br><br>
+									<label for="lname">Height in cm</label>
+										<input type="text" id="height" name="height"><br><br> 
+									<label for="lname">Weight in kg</label>
+										<input type="text" id="weight" name="weight"><br><br>
+										Gender ?   <input type="radio" id="male" name="gender" value="male">&nbsp;
+									<label for="male">Male</label>&nbsp;
+										<input type="radio" id="female" name="gender" value="female">
+									<label for="female">Female</label>&nbsp;
+										<br> <br>
+									<label for="activity">What is your weekly level of physical activity ? </label>
+									<select name="activity" id="activities">
+										<option value="Sedentary" id="Sedentary" >Sedentary or very minimum exercise.</option>
+										<option value="Light" id="Light" >Light exercise 1 to 3 times a week.</option>
+										<option value="Average" id="Average" >Average intensity 3 to 5 times a week.</option>
+										<option value="High" id="High" >High intensity 3 to 5 times a week.</option>
+										<option value="Intense" id="Intense" >Extremly intense and high activity the entire week.</option>
+									</select>
+										<br><br>
+										<button type="button" value="Submit"   onclick="CaloricIntake()" >Submit</button>
+										<button onClick="">Graph</button>
+										<br><br><br><br>
+								</fieldset>
+							</form>
+											
+	
+<canvas id="Calories" width="50" height="50"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+
+ <script src='form1.js'></script>
+				
+					
+						</div>
+						<!-- End of Calories Calculator -->
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br><br>
+		
+			<table  class="Table3">
+				<tr>
+					<td>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/HDfvWrGUkC8" 
+						frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+						allowfullscreen>
+						</iframe>
+					</td>
+				
+					<td>
+					<h1 style="font-size:50px; text-align:center;"> Let us show you how it's done! </h1>
+					<p style="margin-left:15px"> Browse through our selections of videos and reach your goals faster, safer and better. 
+												No matter what you're training for, there's something for everyone. </p> 
+					<p style="text-align:center;"> <button style="padding: 10px 25px;">Click here</button> </p>
+					</td>
+				</tr>
+			</table>
+		
+		<br><br>
+		
+		<div class="background-section2">
+			<table  class="Table2">
+				<tr>
+					<td>
+						<h1 style="font-size:50px; text-align:center;"> Feel right! Eat Right! </h1>
+						<p> Whether you need help with your weekly meal prep or you just want to try something different. 
+							We have a large selecitons of recipies for you to choose from.</p>
+						<p style="text-align:center;"> <button style="padding: 10px 25px;"  onclick = "window.location.href = 'FooDDataBase.php' ">Click here</button> </p>
+					</td>
+					<td style="float:right" class="food2">
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		<p>
+</p>
+	
+	
+		<p> <b> Click here to start your jouney !  </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="../survey/quiz.html" class="loginbtn">Survey</a>   </p>   
+		
+		
+		
+		<p> If you have any questions about anything feel free to consult our F.A.Q section where we would show you how to set up your account, 
+		navigate through the website and use the tools at your disposition.</p>
+		<br>
+		<br>
+		
+
+		<script>
+		var myIndex = 0;
+var myIndex2 = 0;
+image();
+text();
+
+function image() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var y = document.getElementsByClassName("mySlides2");
+  var z = document.getElementsByClassName("mySlides3");
+var w = document.getElementsByClassName("mySlides4");
+  var v = document.getElementsByClassName("mySlides5");
+  
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+	 y[i].style.display = "none"; 
+	 z[i].style.display = "none";  
+	 w[i].style.display = "none"; 
+	 v[i].style.display = "none";  
+	
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  
+  if (myIndex > y.length) {myIndex = 1}    
+  y[myIndex-1].style.display = "block"; 
+  
+    if (myIndex > z.length) {myIndex = 1}    
+  z[myIndex-1].style.display = "block"; 
+  
+    if (myIndex > w.length) {myIndex = 1}    
+  w[myIndex-1].style.display = "block"; 
+  
+  
+    if (myIndex > v.length) {myIndex = 1}    
+  v[myIndex-1].style.display = "block"; 
+  setTimeout(image, 3000); // Change image every 2 seconds
+}
+
+function text() {
+  var k;
+  var y = document.getElementsByClassName("myText");
+  for (k = 0; k < y.length; k++) {
+    y[k].style.display = "none";  
+  }
+  myIndex2++;
+  if (myIndex2 > y.length) {myIndex2 = 1}    
+  y[myIndex2-1].style.display = "block";  
+  setTimeout(text, 3000); // Change image every 2 seconds
+}
+		</script>
+
+
+	</section> 
+	</section>
+</body>
+
+<div class="homepagefooter">
+	<div class="footerdiv">
+		<h1 class="footerheading">Start with the change now</h1>
+		<div class="EmailAddressDiv">
+			<input type="text" placeholder="Email Address" id="EmailAddressInput">
+			<a href="" class="beginnow">Begin Now</a>
+		</div>
+		
+	</div>
+
+	<div class="footerlinkswrapper">
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Sections</p>
+			<p><a href="">Education</a></p>
+			<p><a href="">Finances</a></p>
+			<p><a href="">Health And Fitness</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Go To</p>
+			<p><a href="">Sign in my account</a></p>
+			<p><a href="">Schedule Builder</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">About us</p>
+			<p><a href="">Contact</a></p>
+			<p><a href="">FAQ</a></p>
+			<p><a href="">Account</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Why us?</p>
+			<p><a href="">Our Values</a></p>
+			<p><a href="">Our Mission</a></p>
+		</div>
+		<div class="footerlinksdiv">
+			<p style="margin-bottom: 47px; color: rgb(175, 175, 175);">Follow us on</p>
+			<p><a href="">Twitter</a></p>
+			<p><a href="">Instagram</a></p>
+			<p><a href="">Facebook</a></p>
+		</div>
+	</div>
+</div>
+
+</html>

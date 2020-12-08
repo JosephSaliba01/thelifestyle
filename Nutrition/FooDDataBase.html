@@ -1,3 +1,28 @@
+
+<?php
+	
+	session_start();
+$title;
+$button1;
+$button2;
+if(isset($_SESSION['username']))
+{
+
+   $title = "<h1> Welcome, ".$_SESSION['username']."!</h1>";
+   $button1 = "<a href='profile.php' class='mbloginbtn'>Profile</a>";
+   $button2 = "<a href='PHP/LogOut.inc.php' class='mbloginbtn'>Log Out</a>";
+
+}
+else
+{
+	$title = "<h1> Welcome to the LIFESTYLE.CA!</h1>";
+	$button1 = "<a href='Login.php' class='mbloginbtn'>Login</a>";
+	$button2 = "<a href='SignUp.html' class='mbheaderlinkanchors' style='text-decoration: underline;''><p class='mbheaderlinks'>Create an Account</p></a>";
+}
+
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -5,9 +30,14 @@
 
    <meta charset="UTF-8" />
    <title></title>   
+   
+   <script   type="text/javascript" src="Fitness&Nutrition_js/FoodData.js"> </script>
+   
    <script>
-  
-
+   var value1 = "0";
+var value2 = "0";
+var value3 = "0";
+var value4 = "0";
    </script>
    
    <style>                
@@ -38,8 +68,10 @@ height: 515px;
 width : 500px;
 }
 
+#Tag1{
+background-color: #F8F8F8;
 
-
+}
 #IDZ {
 height: 380px;
 width : 460px;
@@ -63,6 +95,21 @@ border-style: solid;
 }
 
 #Thebutton {
+  background-color: #8B0000; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ font-size : 20px;
+}
+
+#Log{
+
   background-color: #8B0000; 
   border: none;
   color: white;
@@ -145,7 +192,7 @@ width:30px;
 }
 
 #Title {
- text-align:center;
+ color : black;
 }
 #Carbs{
 
@@ -210,14 +257,14 @@ margin:0 auto;
 							<a href="HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
 						</td>
 						<td class="mbheadertd"  style="padding-left: 50px;">
-							<a href="Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
+							<a href="../Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
 
 						</td>
 						<td class="mbheadertd">
-							<a href="Education/education.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
+							<a href="../Education/education.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
 						</td>
 						<td class="mbheadertd">
-							<a href="finances/financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
+							<a href="../finances/financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
 						</td>
 					</tr>
 				</table>
@@ -225,11 +272,15 @@ margin:0 auto;
 				
 			<div id="mbloginsignupsdiv">
 					<div>
-						<a href="" class="mbloginbtn">Login</a>
+						<?php
+						echo "$button1";
+						?>
 					</div>
 					
 					<div>
-						<a href="" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
+						<?php
+						echo "$button2";
+						?>
 					</div>
 			</div>
 		</nav>
@@ -342,7 +393,7 @@ var myChart = new Chart(ctx, {
 										>Add</button>
 										&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
 										
-										<button type="button" value="Log"   onclick="racking()"  id= "Thebutton" >Log</button>
+										<button type="button" value="Log"   onclick="racking()"  id= "Log" >Log</button>
 										
 										<button type="button" value="Try"   onclick="Add()"  id= "Thebutton" >Test</button>
 									
@@ -352,7 +403,25 @@ var myChart = new Chart(ctx, {
 		</td>
 		
 		<td>
-		<h1 id="Title" >  Daily food consumption    </h1>
+		<div id="Tag1" >
+		<p id="Title" style="display:inline">  Daily food consumption  </p>
+<br>
+<div  id="Proteins2"  style="display:inline">  </div>  <p  id="P2" style="display:inline">  
+		
+		&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+		&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+		<div  id="Carbs2" style="display:inline">     </div>   
+		<p  id="C2"  style="display:inline">   </p>
+			&nbsp;  &nbsp;  &nbsp;  
+		<div  id="Fats2"  style="display:inline">  </div>
+		<p  id="F2"  style="display:inline">   </p>
+		&nbsp;  &nbsp;  &nbsp; 
+		<div  id="Calories2"  style="display:inline">  </div>
+		<p  id="CAL2"  style="display:inline">   </p>
+
+		</p>
+		
+		</div>
 		<div id="color"> 
 		
 		<canvas id="Tracking" width="300" height="300"></canvas>
@@ -363,9 +432,9 @@ var myChart = new Chart(ctx, {
 
 var ctx = document.getElementById('Tracking').getContext('2d');
 
-
-
 function racking() {
+
+
 
 ctx.canvas.width =300;
 ctx.canvas.height = 300;
@@ -388,22 +457,64 @@ if(weight.value =="")
 	}
 	
 	function Graph2(a , b , c ,d ){
-	
+
+value1 =  parseInt(value1) + parseInt(a) ; 
+value2 = parseInt(value2) + parseInt(b) ; 
+value3 =  parseInt(value3) + parseInt(c) ; 
+value4 =  parseInt(value4) + parseInt(d) ; 
+
+const sum = parseInt(a) +parseInt(b) + parseInt(c)+ parseInt(d) ;
+
+const PourcentageA = Math.round(100* a/sum);	
+
+const PourcentageB = Math.round(100* b/sum);
+
+const PourcentageC = Math.round(100* c/sum);
+
+const PourcentageD = Math.round(100* d/sum);
+
+var labelProtein = document.getElementById('Proteins2');
+var labelCarbs = document.getElementById('Carbs2');
+var labelFats = document.getElementById('Fats2');
+var labelCalories = document.getElementById('Calories2');
+
+var Protein = document.getElementById('P2');
+var Carbs = document.getElementById('C2');
+var Fats = document.getElementById('F2');
+var Calories2 = document.getElementById('CAL2');
+
+Protein.innerHTML = "{"+PourcentageA + "% " + " | "+Math.round(value1) +" grams" +"}     ";
+Carbs.innerHTML = "{"+PourcentageB + "% " + " | " + Math.round(value2) +" grams" +"}";
+Fats.innerHTML ="{"+ PourcentageC + "% "  + " | "+ Math.round(value3) +" grams" +"}";
+Calories2.innerHTML ="{"+PourcentageD + "% "  + " | "+ Math.round(value4) +" grams" +"}";
+
+Protein.style.fontSize = "medium";
+Carbs.style.fontSize = "medium";
+Fats.style.fontSize = "medium";
+Calories2.style.fontSize = "medium";
 
 
-var value1 = "0";
-var value2 = "0";
-var value3 = "0";
-var value4 = "0";
+labelProtein.style.color = "black";
+labelCarbs.style.color = "black";
+labelFats.style.color = "black";
+labelCalories.style.color = "black";
+
+Protein.style.color = "black";
+Carbs.style.color = "black";
+Fats.style.color = "black";
+Calories2.style.color = "black";
 
 
 
+labelProtein.style.backgroundColor =  'rgba(255, 99, 132, 0.2)';
+labelCarbs.style.backgroundColor =   'rgba(54, 162, 235, 0.2)';
+labelFats.style.backgroundColor =  'rgba(255, 159, 64, 0.2)';
+labelCalories.style.backgroundColor =  'rgb(152,251,152)';
 
-
-value1+=a;
-value2+=b;
-value3+=c;
-value4+=d;
+labelProtein.innerHTML = "Proteins";
+labelCarbs.innerHTML = "Fats";
+labelFats.innerHTML = "Carbs";
+labelCalories.innerHTML = "Calories";
 
 var myChart = new Chart(ctx, {
 
@@ -449,6 +560,7 @@ maintainAspectRatio: false
 }) 
 }
 }
+
 </script>
 		</div>
 		</td>
@@ -460,7 +572,7 @@ maintainAspectRatio: false
 		<br>
 		<h1 id="title"> Control your diet   </h1>
 	
-		<p> The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey. 
+		<p id="Description"> The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey. 
 		It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,
 		and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed.   </p> 
 		
@@ -490,13 +602,26 @@ maintainAspectRatio: false
 		
 		<script>
 		
-		 var y = document.getElementById("activities");
-   sessionStorage.setItem("Object", JSON.stringify(y));
-  var x  =   sessionStorage.getItem("Object");
-   var w = JSON.parse(x);
- // alert(w.value)
+	
+		 var value = document.getElementById("activities");
+    if(sessionStorage.getItem("Test") == "false"){
+	//alert("The value that will be added is " + sessionStorage.getItem("Name"));
+  value.options[value.length] = new Option(sessionStorage.getItem("Name"), sessionStorage.getItem("Name"));
+  //alert("Printing");
+  
+  }
+ // var x  =  JSON.parse(sessionStorage.getItem("Object"));
+  // var w = JSON.parse(sessionStorage.Object);
+ // alert(w);
+  //alert(y);
 function mySort() {
+
+
+ sessionStorage.setItem("Test", "Test");
   window.location.href="Add.html";
+  
+  var name =  sessionStorage.getItem("Name");
+  
 }
 </script>
 
@@ -535,7 +660,7 @@ function mySort() {
 		</div>
 	
 	
-	 <script   type="text/javascript" src="Fitness&Nutrition_js/FoodData.js"> </script>
+	
 </body>
 
 

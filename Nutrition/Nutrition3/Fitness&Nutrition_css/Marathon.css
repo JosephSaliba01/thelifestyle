@@ -1,0 +1,533 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+p{
+font-size: 25px;
+
+}
+
+h1{
+//color : #7c98b6;
+font-weight:normal; 
+font-size: 20px;
+}
+
+.background-section2 {
+	margin-top: -2.3%;
+}
+
+.Table2
+{	padding-bottom:5%;
+	font-size: 17px;
+	width: 100%;
+	background: linear-gradient(to bottom, gray, white);
+}
+
+.Table3
+{
+	margin: auto;
+	width: 95%;
+}
+
+.Table3 a:visited{
+	color:black;
+}
+
+.Table3 a:link{
+	color:black;
+}
+
+.Table4
+{
+	font-size: 17px;
+	width: 100%;
+	background: linear-gradient(to bottom, white, gray);
+}
+
+.body
+{
+	background-color: white;
+	position: relative;
+
+}
+
+.MainDivTagBanner{
+	margin-right: 175px;
+	margin-left: 175px;
+}
+
+.MainDivTagFooter{
+	background: linear-gradient(to bottom, gray, white);
+	margin-top:0%;
+	
+}
+
+.MainFooterWrapper{
+	
+	margin-right: 175px;
+	margin-left: 175px;
+}
+
+.MainDivTag
+{
+	/*margin-right: 175px;
+	margin-left: 175px;*/
+    background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.SecondMainDivTag
+{
+    background-color: white;
+}
+
+.Headernav {
+	margin-left:auto; 
+	margin-right:auto;
+	background-color:white;
+	position: sticky;	
+	display: flex;
+}
+
+.tablediv {
+ background-color: white;
+ width: 80%;
+ float: left;
+
+}
+
+.loginsignupsdiv {
+	width: 20%;
+	background-color: white;
+	float: right;
+	height: auto;
+
+   }
+
+.loginsignuptable {
+	height: 100%;
+	padding-left: 100%;
+}   
+
+.headertd {
+	padding-right: 15px;	
+	padding-left: 15px;	
+
+}
+
+.headerlinkanchors {
+	text-decoration: none;
+	
+	
+}
+
+a.headerlinkanchors:visited {
+	color: black;
+}
+
+a.loginbtn:link, a.loginbtn:visited {
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 10px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	
+  }
+  
+  a.loginbtn:hover, a.loginbtn:active {
+	background-color: black;
+	color: white;
+	font-size: 17px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	
+  }
+
+.headerlinks {
+	font-size: 19px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	
+}
+
+
+#MenuForCategories
+{
+	text-align: center;
+}
+
+#bottomTable
+	{width:100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	border-top: 3px solid black;
+	}	
+
+#MainMenuHeader
+{	
+	font-style: normal;
+	font-size: 25px;
+	color:black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	
+}
+
+.buttonStyle{
+	background-color: #0b4f9c;
+	color: white;
+	border-radius: 5px;
+}
+
+
+/* Bannaer */
+.banner-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Fitness&Nutrition_img/running.jpg");
+  overflow-x: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color:pink;
+  margin-left: -12%;
+  margin-right: -11.2%;
+  padding:20%;
+  
+}
+
+
+
+/* -------- Text animations -------- */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+#container {
+  color:#999;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  padding-top:100px;
+	padding-left: 15%;
+  width:100%;
+  bottom:45%;
+  position:fix;
+ 
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background:#42c58a;
+}
+#flip div:first-child div {
+  background:#4ec7f3;
+}
+#flip div:last-child div {
+  background:#DC143C;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+/* ------------ Fade in action -------------- */
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.menuVideos{
+	width: 100%;
+	background-color: #333; 
+	margin-bottom:.4%;
+	padding-bottom:.1%;
+	}
+	
+	.menuVideos ul{
+	margin: 0; 
+	padding: 0;
+	float: left;}
+
+.menuVideos ul li{
+	display: inline;}
+
+.menuVideos ul li a{
+	float: left; 
+	text-decoration: none;
+	color: white;
+	padding: 10.5px 11px;
+	background-color: #333; }
+
+.menuVideos ul li a:visited{
+	color: white;}
+
+.menuVideos ul li a:hover, .menu ul li .current{
+	color: #fff;
+	background-color:#0b75b2;}
+	
+	
+
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  text-align:center;
+  background-color:#edf8fa;
+}
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  
+}
+
+.mini-Image{
+	width:23%;
+	height:30%;
+	float:center;
+}
+
+.mini-Image2{
+	width:40%;
+	height:50%;
+	float:center;
+}
+
+.mini-Image3{
+	width:15%;
+	height:25%;
+	float:center;
+}
+	
+/* Video section 1. Note: Videos were from youtube*/
+	
+.slidershow{
+  width: 700px;
+  height: 400px;
+  overflow: hidden;
+  margin-left:10%;
+  margin-top:5%;
+ 
+}
+
+.navigation{
+  position: absolute;
+  bottom: -580px;
+  left: 75%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.bar{
+  width: 50px;
+  height: 10px;
+  border: 2px solid black;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar:hover{
+  background: gray;
+}
+
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slide{
+  width: 20%;
+  transition: 0.6s;
+}
+
+
+#r1:checked ~ .s1{
+  margin-left: 0;
+}
+#r2:checked ~ .s1{
+  margin-left: -20%;
+}
+#r3:checked ~ .s1{
+  margin-left: -40%;
+}
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
+#r5:checked ~ .s1{
+  margin-left: -80%;
+}
+
+/* Video section 2. Note: Videos were from youtube*/
+
+.slidershow2{
+  width: 700px;
+  height: 400px;
+  overflow: hidden;
+  margin-left:10%;
+  margin-top:5%;
+ 
+}
+
+.navigation2{
+  position: absolute;
+  bottom: -130%;
+  left: 25%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.bar2{
+  width: 50px;
+  height: 10px;
+  border: 2px solid black;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar2:hover{
+  background: gray;
+}
+
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides2{
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slide2{
+  width: 20%;
+  transition: 0.6s;
+}
+
+
+#rr1:checked ~ .s1{
+  margin-left: 0;
+}
+#rr2:checked ~ .s1{
+  margin-left: -20%;
+}
+#rr3:checked ~ .s1{
+  margin-left: -40%;
+}
+#rr4:checked ~ .s1{
+  margin-left: -60%;
+}
+#rr5:checked ~ .s1{
+  margin-left: -80%;
+}
+	
+	/* Video section 3. Note: Videos were from youtube*/
+
+.slidershow3{
+  width: 700px;
+  height: 400px;
+  overflow: hidden;
+  margin-left:10%;
+  margin-top:5%;
+ 
+}
+
+.navigation3{
+  position: absolute;
+ bottom: -184%;
+  left: 74%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.bar3{
+  width: 50px;
+  height: 10px;
+  border: 2px solid black;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar3:hover{
+  background: gray;
+}
+
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides3{
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slide3{
+  width: 20%;
+  transition: 0.6s;
+}
+
+
+#rrr1:checked ~ .s1{
+  margin-left: 0;
+}
+#rrr2:checked ~ .s1{
+  margin-left: -20%;
+}
+#rrr3:checked ~ .s1{
+  margin-left: -40%;
+}
+#rrr4:checked ~ .s1{
+  margin-left: -60%;
+}
+#rrr5:checked ~ .s1{
+  margin-left: -80%;
+}
+	
+	
+	

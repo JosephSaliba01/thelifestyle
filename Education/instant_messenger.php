@@ -1,3 +1,39 @@
+<?php
+
+require '../Filebase/vendor/autoload.php';
+session_start();
+
+
+if(isset($_SESSION["username"])){
+$Username = $_SESSION["username"] ;
+
+$database = new \Filebase\Database([
+    'dir' => '../Filebase/Database/users',
+    'backupLocation' => '../Filebase/Database/Backup'
+]);
+
+$user = $database->get($Username);
+
+$title;
+$button1;
+$button2;
+if(isset($_SESSION['username']))
+{
+
+   $title = "<h1> Welcome, ".$_SESSION['username']."!</h1>";
+   $button1 = "<a href='../Profile.php' class='mbloginbtn'>Profile</a>";
+   $button2 = "<a href='../PHP/LogOut.inc.php' class='mbloginbtn'>Log Out</a>";
+
+}
+
+}
+else{
+ $title = "<h1> Welcome to the LIFESTYLE.CA!</h1>";
+ $button1 = "<a href='../Login.php' class='mbloginbtn'>Login</a>";
+ $button2 = "<a href='../SignUp.php' class='mbheaderlinkanchors' style='text-decoration: underline;''><p class='mbheaderlinks'>Create an Account</p></a>";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -17,31 +53,30 @@
 							<img src="edu_img/potentiallogo.png" alt="logo" style="width:50px;height:50px; float: left;">
 						</td>
 						<td>
-							<a href="../HomePage.html" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
+							<a href="../HomePage.php" style="text-decoration: none;"><h1 id="mbMainMenuHeader">THELIFESTYLE.CA</h1></a>
 						</td>
 						<td class="mbheadertd"  style="padding-left: 50px;">
-							<a href="../Nutrition/Fitness&Nutrition.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
+							<a href="../Nutrition/Fitness&Nutrition.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Fitness & Nutrition</p></a>
 
 						</td>
 						<td class="mbheadertd">
-							<a href="education.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
+							<a href="education.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Education & Professional Life</p></a>
 						</td>
 						<td class="mbheadertd">
-							<a href="../finances/financepage.html" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
+							<a href="../finances/financepage.php" class="mbheaderlinkanchors"><p class="mbheaderlinks">Finances</p></a>
 						</td>
 					</tr>
 				</table>
 			</div>
 				
-			<div id="mbloginsignupsdiv">
-					<div>
-						<a href="" class="mbloginbtn">Login</a>
-					</div>
-					
-					<div>
-						<a href="" class="mbheaderlinkanchors" style="text-decoration: underline;"><p class="mbheaderlinks">Create an Account</p></a>
-					</div>
-			</div>
+		 <div id="mbloginsignupsdiv">
+                <?php
+                echo "$button1";
+                ?>
+                <?php
+                echo "$button2";
+                ?>
+            </div>
 		</nav>
 
 	
@@ -66,7 +101,7 @@
 								<td>
 									</br><input type="text" name="email" id="email" style="height:30px;" placeholder="Email"/>
 								</td>
-								<td>
+								<td id="setid">
 									</br><input name="set" type="button"  id="sendBtn" style="height:30px; background-color:#7db3e3;" value="Set" onclick="set_cookie()"/>
 								</td>
 								

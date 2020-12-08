@@ -1,5 +1,6 @@
 function CaloricIntake (){
 	
+	
 	var age = document.getElementById('age').value;
 	
 	var height = document.getElementById('height').value;
@@ -87,8 +88,6 @@ Women BMR = 447.593 + (9.247 x weight in kg) + (3.098 x height in cm) - (4.330 x
 */
 	
 }
-
-
 function Graph (a , b ,c ){
 	
 	

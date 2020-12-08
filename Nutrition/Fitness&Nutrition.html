@@ -1,3 +1,29 @@
+
+
+<?php
+	
+	session_start();
+$title;
+$button1;
+$button2;
+if(isset($_SESSION['username']))
+{
+
+   $title = "<h1> Welcome, ".$_SESSION['username']."!</h1>";
+   $button1 = "<a href='profile.php' class='mbloginbtn'>Profile</a>";
+   $button2 = "<a href='PHP/LogOut.inc.php' class='mbloginbtn'>Log Out</a>";
+
+}
+else
+{
+	$title = "<h1> Welcome to the LIFESTYLE.CA!</h1>";
+	$button1 = "<a href='Login.php' class='mbloginbtn'>Login</a>";
+	$button2 = "<a href='SignUp.html' class='mbheaderlinkanchors' style='text-decoration: underline;''><p class='mbheaderlinks'>Create an Account</p></a>";
+}
+
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -176,7 +202,7 @@
 						<h1 style="font-size:50px; text-align:center;"> Feel right! Eat Right! </h1>
 						<p> Whether you need help with your weekly meal prep or you just want to try something different. 
 							We have a large selecitons of recipies for you to choose from.</p>
-						<p style="text-align:center;"> <button style="padding: 10px 25px;">Click here</button> </p>
+						<p style="text-align:center;"> <button style="padding: 10px 25px;"  onclick = "window.location.href = 'FooDDataBase.php' ">Click here</button> </p>
 					</td>
 					<td style="float:right" class="food2">
 						

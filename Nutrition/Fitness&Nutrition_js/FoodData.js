@@ -1,41 +1,84 @@
 
-var NewElements = new Array(999999);
-var count =0;
-function Add(){
+
+var add = false;
+
+
+function Add(name,protein, carbs,fats ,calories,Image,descrip,Index,UserName ){
+	  add = true;
 	  
-	  //salert(Object.Name);
+	  // global variabel add to configure 
+	  //alert(Object.Name);
 
-var value = document.getElementById("activities");
+//var value = document.getElementById("activities");
 
-var NewObject = {Name :"Lemon Juice", ProteinPerGram:"0.7", CarbPerGram:"0.2", FatPerGram:"0.7" , CaloriesPerGram:"0.9" , image :"https://www.foodiesfeed.com/wp-content/uploads/2020/05/suco-de-limao-com-slash-349x524.jpg"};
+//var NewObject = {Name :"Lemon Juice", ProteinPerGram:"0.7", CarbPerGram:"0.2", FatPerGram:"0.7" , CaloriesPerGram:"0.9" , image :"https://www.foodiesfeed.com/wp-content/uploads/2020/05/suco-de-limao-com-slash-349x524.jpg"};
 
 
 //https://www.foodiesfeed.com/wp-content/uploads/2020/05/suco-de-limao-com-slash-349x524.jpg
 
 
-value.options[value.length] = new Option(NewObject.Name, NewObject.Name);
+//value.options[value.length] = new Option(Object.Name, Object.Name);
    
   
      //console.log(localStorage.getItem("Object"));
+	 
+	// var NewObject = {Name :name, ProteinPerGram :protein, CarbPerGram :carbs, FatPerGram :fats , CaloriesPerGram :calories , image :Image };
    
-   //var x  =   sessionStorage.getItem("Object");
    
-  // var w = JSON.parse(x);
- // alert(w.value);
+   //var ArrayOfFood =  localStorage.getItem("Array2");
+     
+	 
+	 
+	// console.log("The array : "+localStorage.getItem("Array2"));
+ // alert( "The size of the first array is  "+ Object.keys(ArrayOfFood).length );
+  
+  // var ArrayOfFood2 =  localStorage.getItem("Array");
+ 
+  //alert("The size of the second array is " + Object.keys(ArrayOfFood2).length );
+  
+   localStorage.setItem(UserName+"+Proteins", protein);
+   
+   localStorage.setItem(UserName+"+Carbs", carbs);
+   
+   localStorage.setItem(UserName+"+Fats", fats);
+   
+   localStorage.setItem(UserName+"+Calories", calories);
+   
+    localStorage.setItem(UserName+"+Image", Image);
+	
+	  localStorage.setItem(UserName+"+Description2", descrip);  
+	 
  /*
   var option = document.createElement("option");
   option.text = NewObject.Name;
   x.add(option);
   */
-   NewElements[count] = NewObject;   
+   //NewElements[count] = NewObject;   
+  
+   sessionStorage.setItem("Test", "false");
    
-   count++;
-   
-
+   //alert(sessionStorage.getItem("Test"));
+window.open("FooDDataBase.php");
 }
 
 function Calculation() {
+	add = true;
 	
+
+/*	
+var select2 = document.getElementById("activities"); 
+var options = ["Appended"]; 
+
+for(var i = 0; i < options.length; i++) {
+	
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select2.appendChild(el);
+}
+	
+	*/
 	var Almonds = {ProteinPerGram:"0.2", CarbPerGram:"0.2", FatPerGram:"0.5" , CaloriesPerGram:"5.8"};
 	//https://www.nutritionvalue.org/Almonds%2C_unroasted_nutritional_value.html
 	var Banana = {ProteinPerGram:"0", CarbPerGram:"0.2", FatPerGram:"0" , CaloriesPerGram:"0.9"};
@@ -82,6 +125,9 @@ function Calculation() {
 	
 	var WheyProtein = {ProteinPerGram:"0", CarbPerGram:"0.2", FatPerGram:"0" , CaloriesPerGram:"0.2"};
 	
+	var  Description = document.getElementById("Description");
+	
+	
 	/*
 	Eggs
 	Salmon
@@ -101,16 +147,6 @@ function Calculation() {
 	
 	
 	var value = document.getElementById("activities");
-
-
-/*	
-	 value.options[value.length] 
-   = new Option('yourText', 'yourValue');
-
-     */
-
-
-
 
      
 	
@@ -134,7 +170,13 @@ function Calculation() {
 	
 	var image = document.getElementById("Food");
 	
-	if(value.value == "Almonds"){
+	//alert("Hello");
+	//alert(value.value);
+	console.log(value.value);
+		console.log("/n");
+	console.log("Almonds");
+	
+	if(value.value == "Almond"){
 		
 		calor.innerHTML = Math.round (weight.value *  Almonds.CaloriesPerGram);
 		
@@ -148,6 +190,10 @@ function Calculation() {
 		image.src = "Fitness&Nutrition_img/almonds.jpg";
 		
 		 gram.innerHTML =  weight.value;
+		 
+
+Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
+		 
 		 Graph(weight.value * Almonds.ProteinPerGram,weight.value *  Almonds.CarbPerGram, weight.value * Almonds.FatPerGram);
 		
 	}
@@ -164,6 +210,8 @@ function Calculation() {
 		fats.innerHTML =  Math.round (weight.value * Apple.FatPerGram);
 			
 		image.src = "Fitness&Nutrition_img/Apple.png";
+		
+		Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		
 		 gram.innerHTML =  weight.value;
 		 Graph(weight.value * Apple.ProteinPerGram,weight.value *  Apple.CarbPerGram, weight.value * Apple.FatPerGram);
@@ -186,7 +234,7 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/banana.jpg";
-		 
+		 Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 Graph(weight.value *Banana.ProteinPerGram, weight.value *Banana.CarbPerGram, weight.value * Banana.FatPerGram);
 		
 	}
@@ -206,6 +254,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/Brocoli.png";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *Brocoli.ProteinPerGram, weight.value *Brocoli.CarbPerGram, weight.value * Brocoli.FatPerGram);
 		
@@ -215,39 +265,40 @@ function Calculation() {
 		
 		calor.innerHTML = Math.round (weight.value *  Butter.CaloriesPerGram);
 		
-		
 		protein.innerHTML =  Math.round (weight.value * Butter.ProteinPerGram);
 		
 		cabrs.innerHTML = Math.round (weight.value *  Butter.CarbPerGram);
 		
 		fats.innerHTML =  Math.round (weight.value * Butter.FatPerGram);
 		
-		
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/Butter.jpg";
 		 
+		 Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 Graph(weight.value *Butter.ProteinPerGram, weight.value *Butter.CarbPerGram, weight.value * Butter.FatPerGram);
 		
 	}
 	
 	if(value.value == "Bacon"){
 		
-		calor.innerHTML = weight.value *  Bacon.CaloriesPerGram
 		
+		calor.innerHTML = weight.value *  Bacon.CaloriesPerGram
 		
 		protein.innerHTML =  Math.round (weight.value * Bacon.ProteinPerGram);
 		
 		cabrs.innerHTML = Math.round (weight.value *  Bacon.CarbPerGram);
 		
 		fats.innerHTML =  Math.round (weight.value * Bacon.FatPerGram);
-		
-		
+				
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/bacon.jpg";
 		 
+		 
+		 Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 Graph(weight.value *Bacon.ProteinPerGram, weight.value *Bacon.CarbPerGram, weight.value * Bacon.FatPerGram);
+		 
 		
 	}
 	
@@ -266,6 +317,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/BrownRice.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *BrownRice.ProteinPerGram, weight.value *BrownRice.CarbPerGram, weight.value * BrownRice.FatPerGram);
 		
@@ -287,6 +340,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/BasmatiRice.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *BasmatiRice.ProteinPerGram, weight.value *BasmatiRice.CarbPerGram, weight.value * BasmatiRice.FatPerGram);
 		
@@ -307,6 +362,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/BrownBread.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *BrownBread.ProteinPerGram, weight.value *BrownBread.CarbPerGram, weight.value * BrownBread.FatPerGram);
 		
@@ -328,6 +385,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/chicken.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *Chicken.ProteinPerGram, weight.value *Chicken.CarbPerGram, weight.value * Chicken.FatPerGram);
 		
@@ -348,12 +407,12 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/milk.jpeg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *Milk.ProteinPerGram, weight.value *Milk.CarbPerGram, weight.value * Milk.FatPerGram);
 		
 	}
-	
-
 	
 	
 	if(value.value == "Eggs"){
@@ -371,6 +430,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/egg.png";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *Eggs.ProteinPerGram, weight.value *Eggs.CarbPerGram, weight.value * Eggs.FatPerGram);
 		
@@ -392,6 +453,7 @@ function Calculation() {
 		 
 		 	image.src ="Fitness&Nutrition_img/Salmon.jpg";
 		 
+		 Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 Graph(weight.value *Salmon.ProteinPerGram, weight.value *Salmon.CarbPerGram, weight.value * Salmon.FatPerGram);
 		
 	}
@@ -412,6 +474,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/Steak.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *Steak.ProteinPerGram, weight.value *Steak.CarbPerGram, weight.value * Steak.FatPerGram);
 		
@@ -432,6 +496,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/tomato.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *Tomato.ProteinPerGram, weight.value *Tomato.CarbPerGram, weight.value * Tomato.FatPerGram);
 		
@@ -452,13 +518,14 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/WhiteRice.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *WhiteRice.ProteinPerGram, weight.value *WhiteRice.CarbPerGram, weight.value * WhiteRice.FatPerGram);
 		
 	}
 	
 	if(value.value == "White Bread"){
-		
 		
 		
 		calor.innerHTML = Math.round (weight.value *  WhiteBread.CaloriesPerGram);
@@ -469,11 +536,12 @@ function Calculation() {
 		cabrs.innerHTML = Math.round (weight.value *  WhiteBread.CarbPerGram);
 		
 		fats.innerHTML =  Math.round (weight.value * WhiteBread.FatPerGram);
-		
-		
+			
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/White-Bread.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *WhiteBread.ProteinPerGram, weight.value *WhiteBread.CarbPerGram, weight.value * WhiteBread.FatPerGram);
 		
@@ -496,6 +564,8 @@ function Calculation() {
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/Oliveoil.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *Oliveoil.ProteinPerGram, weight.value *Oliveoil.CarbPerGram, weight.value * Oliveoil.FatPerGram);
 		
@@ -506,61 +576,85 @@ function Calculation() {
 		
 		calor.innerHTML = Math.round (weight.value *  PeanutButter.CaloriesPerGram);
 		
-		
+
 		protein.innerHTML =  Math.round (weight.value * PeanutButter.ProteinPerGram);
 		
 		cabrs.innerHTML = Math.round (weight.value *  PeanutButter.CarbPerGram);
 		
 		fats.innerHTML =  Math.round (weight.value * PeanutButter.FatPerGram);
 		
-		
 		 gram.innerHTML =  weight.value;
 		 
 		 	image.src ="Fitness&Nutrition_img/PeanutButter.jpg";
+			
+			Description.innerHTML = "The nutrition maximiser is a tool that you can use to enhance your results in your fitness journey.It comes with a small database of the most consumed types of food and recommended types of hood for a healthy diet. You can select a given choice,and the tool will consequently illustrate the correct macronutrient profile of this food choice and its caloric content based on the number of grams you consumed";
 		 
 		 Graph(weight.value *PeanutButter.ProteinPerGram, weight.value *PeanutButter.CarbPerGram, weight.value * PeanutButter.FatPerGram);
 		
 	}
 	
 	
-	else {
-		
-		for(var i = 0; i < NewElements.length ;i++ ){
-			if(value.value == NewElements[i].Name){
-				
+	var OuterArray =  JSON.parse(localStorage.getItem("Array2"));
+	
+	for(var i = 0 ; i < JSON.parse(localStorage.getItem("Array2")).length ; i++ ){
+	  
+	    
+		if(i ==2){
+			//alert("Here");
 			
-		calor.innerHTML = Math.round (weight.value *  NewElements[i].CaloriesPerGram);
+			console.log(value.value);
+		console.log("Value is " + JSON.parse(localStorage.getItem("Array2"))[i]);
+		console.log("\n Array  is " + JSON.parse(localStorage.getItem("Array2")));
 		
+		console.log("\n Array size is " + JSON.parse(localStorage.getItem("Array2")).length);
 		
-		protein.innerHTML =  Math.round (weight.value * NewElements[i].ProteinPerGram);
+		}
 		
-		cabrs.innerHTML = Math.round (weight.value *  NewElements[i].CarbPerGram);
+	   if(value.value  == JSON.parse(localStorage.getItem("Array2"))[i] ) {
+		   
+		 //  alert("We have reached this place and index of Array2 IS " + i);
+		  // alert("Value is " + JSON.parse(localStorage.getItem("Array2"))[i] );
+			
+	   
+	for(var j = 0 ; j < JSON.parse(localStorage.getItem("Array")).length  ; j++ ){
+	
+	SpecialArray = JSON.parse(localStorage.getItem("Array"))[j];
+	
+	var res= SpecialArray.split("+");
+/*	
+	if(j ==2){
+	
+	alert("Index 0 " +  res[0] + "Index 1 " + res[1] + " value " + JSON.parse(localStorage.getItem("Array2"))[j]);
+	
+	}
+	*/
+	 if( OuterArray[i]  == res[1] ) {
+					
+		calor.innerHTML = Math.round (weight.value *  localStorage.getItem(res[0]+"+Calories"));
 		
-		fats.innerHTML =  Math.round (weight.value * NewElements[i].FatPerGram);
+		protein.innerHTML =  Math.round (weight.value * localStorage.getItem(res[0]+"+Proteins")  );
 		
+		cabrs.innerHTML = Math.round (weight.value *  localStorage.getItem(res[0]+"+Carbs") );
+		
+		fats.innerHTML =  Math.round (weight.value *localStorage.getItem(res[0]+"+Fats")   );
 		
 		 gram.innerHTML =  weight.value;
 		 
-		 	image.src =NewElements[i].image;
+		 	image.src =localStorage.getItem(res[0]+"+Image");
+			
+			
+			Description.innerHTML =   localStorage.getItem(res[0]+"+Description2");
 		 
-		 Graph(weight.value *NewElements[i].ProteinPerGram, weight.value *NewElements[i].CarbPerGram, weight.value * NewElements[i].FatPerGram);			
-				
-			}	
-		}	
+		 Graph(weight.value *localStorage.getItem(res[0]+"+Proteins"), weight.value *localStorage.getItem(res[0]+"+Carbs"), weight.value * localStorage.getItem(res[0]+"+Fats"));	
+
+	 }
+	}
+			
+	}
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
 
 	
 	/*
@@ -592,7 +686,12 @@ function Calculation() {
 	
 }
 
+
+}
 	function Graph(a, b ,c){
+		
+		
+		
 		
 		const sum = a + b + c;
 
@@ -670,7 +769,33 @@ myPieChart.update();
 	}
 	
 
+
+function Update(a){
+    // Create our XMLHttpRequest object
+
+    var hr = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "../Information4.php";
 	
+    var vars = "NewData="+a;
+	
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+		    var return_data = hr.responseText;
+			
+	    }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(vars); // Actually execute the request
+  
+}
+
+
+
 
 	
 	

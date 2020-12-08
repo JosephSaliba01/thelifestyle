@@ -1,5 +1,6 @@
 
 <?php
+ session_start();
 require '../Filebase/vendor/autoload.php';
 
 $database = new \Filebase\Database([

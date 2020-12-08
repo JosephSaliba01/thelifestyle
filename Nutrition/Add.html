@@ -13,8 +13,11 @@
 
 <script language="javascript" src='Fitness&Nutrition_js/FoodData.js'>    </script>
 
-<style>
 
+<link rel="stylesheet" type = "text/css" href="../home_css/Sign_Up_CSS.css">
+
+
+<style>
 
 #NutritionTable{
 margin:0 auto;
@@ -27,25 +30,36 @@ border-style: solid;
 
 #submit{
 
-
 }
 
 #submit2{
 
-width: 125px;
-    margin-left: auto;
-    margin-right: auto;
-	
-	text-align: center;
-	
-	display: block;
-    margin: 0 auto;
+
 
 }
 
 #email {
 width : 50px;
 }
+
+.Profile 
+    {
+    	outline-style: solid;
+      	outline-color: blue;
+      	width: 25%;
+      	border: 5px solid #cc6699;
+      	box-shadow: 0 5px 15px;
+      }
+      .ScheduleBuilder
+      {margin:0 auto;
+	  border-style: solid;
+      		outline-style: solid;
+      	outline-color: black;
+      	width: 50%;
+      	border: 5px solid #3399ff;
+      	box-shadow: 0 5px 15px;
+		 font-size: 25px;
+      }
 
 .drag-drop{
     width: 600px;
@@ -74,17 +88,34 @@ width : 50px;
     color: white;
 }
 
+.Colum1{
+ width: 1500px;
+
+}
+
+.Colum2{
+
+width: 700px;
+
+}
+
+#TopMenu{
+border-style: solid;
+width: 900px;
+ text-align: center;
+  
+    left: 20px;
+}
 
 </style>
 
-
-
 </head>
-
 
 <body >
 
-<div id="NutritionTable" >
+<div id="ScheduleBuilder" >
+
+<div id="TopMenu">
 <h1> Add  your own food to the Database </h1>
 
 <p id ="p1"> In order to make sure that you are adding the right measurements please feel free to consult the following website for more accuracy.  </p>
@@ -93,22 +124,18 @@ width : 50px;
 <br>
 <a href="https://www.nutritionix.com/">Nutritionix</a>
 
+</div>
+
 <table>
 <tr>
-<td>
-
-<!-- Process.php -->
+<td class= "Colum1">
 
 
 
 <form action = ""
 method = "post">
 <fieldset>
-    <legend>Form:</legend>
-	
-	
-
-	
+  
     <label for="name">Name of the food: </label>
     <input type="text" id="name" name="name" value="name"> <br><br>
 	
@@ -126,34 +153,37 @@ method = "post">
 	
 	<label for="Description"></label>
 	Please enter a small description for you newly added food .
-<textarea id="Description" name="Description" rows="4" cols="50">
+	<br> <br>
+<textarea id="Description" name="Description" rows="10" cols="200">
   </textarea>
-<!--<input type="submit" value="CheckID" id="true2" >  -->
+  
+  <br> <br>
+ <label for="lname"> If you have a picture for your food please copy paste the url here </label><br>
+    <input type="text" id="Url" name="Url" value="Url"> &nbsp;  &nbsp;  &nbsp;
   
 </form>
 
-</fieldset>
+
 
 </td>
-<td class = "row2">
+<td  class= "Colum2">
 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
 
- <img id="Food" width="500" height="300" src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Golu_australia_2018.jpg/220px-Golu_australia_2018.jpg' alt="W3Schools.com" style="width:100%">
+ <img id="Food" width="1400" height="600" src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Golu_australia_2018.jpg/220px-Golu_australia_2018.jpg' alt="W3Schools.com" style="width:100%">
  
  </td>
 </tr>
 </table>
-
- <label for="lname"> If you have a picture for your food please copy paste the url here </label><br>
-    <input type="text" id="Url" name="Url" value="Url"> &nbsp;  &nbsp;  &nbsp;
-	
-    </form>
 	 <button  id="submit"  onclick = "Test()" >  Submit Image </button>
 	 <br>
 	 <br>
 	 
 	 <button  id="submit2"  onclick = "isImageOk()" >  Confirm </button>
+	 
 	
+</div>
+
+
 <script> 
 function  Test() {
 
@@ -185,20 +215,23 @@ var image = document.getElementById("Food");
 
 image.alt = name.value;
 
-
 image.src = link;
 
-
-
+var image2 = document.getElementById("Food");
+ if (link == "Url"|| image2.width <=56){
+alert("The link you have entered is invalid or the image is too small please try again and copy the adress of the image correctly");
+}
 
 //alert(isImageOk(image));
-
 //image.src = imageDropped.value;
 
 }
 
 function isImageOk() {
-
+var Descrip = document.getElementById("Description");
+var verif = true;
+var verif2= true;
+var link = document.getElementById("Url").value;
 var image = document.getElementById("Food");
    if(image.width <=56){
 alert("The link you have entered is invalid or the image is too small please try again and copy the adress of the image correctly")
@@ -209,20 +242,35 @@ else {
 var name = document.getElementById("name");
 
 var protein = document.getElementById("protein");
-
+ if(isNaN(protein.value)){
+ verif = false;
+ }
 
 var carbs = document.getElementById("carbs");
-
+ if(isNaN(carbs.value)){
+  verif = false;
+ }
 
 var fats = document.getElementById("fats");
-
+ if(isNaN(fats.value)){
+  verif = false;
+ }
 var calories = document.getElementById("calories");
+ if(isNaN(calories.value)){
+ verif = false;
+ }
+ 
+  if(link == "Url"|| image.width <=56){
+ verif2 = false;
+ }
+ 
+ if(verif == true && verif2==true ){
 
-
+   if(image.width <=56){
+alert("The link you have entered is invalid or the image is too small please try again and copy the adress of the image correctly")
+}
 
 var Image = document.getElementById("Food");
-
-var Descrip = document.getElementById("Description");
 
 
 var NewObject = {Name :name.value, ProteinPerGram:protein.value, CarbPerGram:carbs.value, FatPerGram:fats.value , CaloriesPerGram:calories.value , 
@@ -230,9 +278,22 @@ var NewObject = {Name :name.value, ProteinPerGram:protein.value, CarbPerGram:car
 image :Image.value};
 
 
-Add(NewObject);
+Add(name.value,protein.value, carbs.value,fats.value ,calories.value,link, Descrip.value);
 
-	window.open("FooDDataBase.html");
+}
+
+else if (verif == false) {
+
+alert("Make sure to enter a number for the fields protein, carbs,fats and calories. ");
+
+}
+
+else if (link == "Url"|| image.width <=56){
+
+alert("Make sure to enter a valid URL.");
+
+}
+	
 }
     
 }
@@ -243,7 +304,22 @@ Add(NewObject);
 
 
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
